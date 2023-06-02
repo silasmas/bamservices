@@ -123,104 +123,104 @@ Banner Video
 
   ////////////////////////////////////////////////////
   // settings append in body
-  function tp_settings_append($x) {
-    var settings = $("body");
-    let dark;
-    $x == true ? (dark = "d-block") : (dark = "d-none");
-    var settings_html = `<div class="tp-theme-settings-area transition-3">
-		<div class="tp-theme-wrapper">
-		   <div class="tp-theme-header text-center">
-			  <h4 class="tp-theme-header-title">Theme Settings</h4>
-		   </div>
+  // function tp_settings_append($x) {
+  //   var settings = $("body");
+  //   let dark;
+  //   $x == true ? (dark = "d-block") : (dark = "d-none");
+  //   var settings_html = `<div class="tp-theme-settings-area transition-3">
+	// 	<div class="tp-theme-wrapper">
+	// 	   <div class="tp-theme-header text-center">
+	// 		  <h4 class="tp-theme-header-title">Theme Settings</h4>
+	// 	   </div>
 
-		   <!-- THEME TOGGLER -->
-		   <div class="tp-theme-toggle mb-20 ${dark}" style="display:none">
-			  <label class="tp-theme-toggle-main" for="tp-theme-toggler">
-				 <span class="tp-theme-toggle-dark"><i class="fa-light fa-moon"></i> Dark</span>
-					<input type="checkbox" id="tp-theme-toggler">
-					<i class="tp-theme-toggle-slide"></i>
-				 <span class="tp-theme-toggle-light active"><i class="fa-light fa-sun-bright"></i> Light</span>
-			  </label>
-		   </div>
+	// 	   <!-- THEME TOGGLER -->
+	// 	   <div class="tp-theme-toggle mb-20 ${dark}" style="display:none">
+	// 		  <label class="tp-theme-toggle-main" for="tp-theme-toggler">
+	// 			 <span class="tp-theme-toggle-dark"><i class="fa-light fa-moon"></i> Dark</span>
+	// 				<input type="checkbox" id="tp-theme-toggler">
+	// 				<i class="tp-theme-toggle-slide"></i>
+	// 			 <span class="tp-theme-toggle-light active"><i class="fa-light fa-sun-bright"></i> Light</span>
+	// 		  </label>
+	// 	   </div>
 
-		   <!--  RTL SETTINGS -->
-		   <div class="tp-theme-dir mb-20">
-			  <label class="tp-theme-dir-main" for="tp-dir-toggler">
-				 <span class="tp-theme-dir-rtl"> RTL</span>
-					<input type="checkbox" id="tp-dir-toggler">
-					<i class="tp-theme-dir-slide"></i>
-				 <span class="tp-theme-dir-ltr active"> LTR</span>
-			  </label>
-		   </div>
+	// 	   <!--  RTL SETTINGS -->
+	// 	   <div class="tp-theme-dir mb-20">
+	// 		  <label class="tp-theme-dir-main" for="tp-dir-toggler">
+	// 			 <span class="tp-theme-dir-rtl"> RTL</span>
+	// 				<input type="checkbox" id="tp-dir-toggler">
+	// 				<i class="tp-theme-dir-slide"></i>
+	// 			 <span class="tp-theme-dir-ltr active"> LTR</span>
+	// 		  </label>
+	// 	   </div>
 
-		   <!-- COLOR SETTINGS -->
-		   <div class="tp-theme-settings">
-			  <div class="tp-theme-settings-wrapper">
-				 <div class="tp-theme-settings-open">
-					<button class="tp-theme-settings-open-btn">
-					   <span class="tp-theme-settings-gear">
-						  <i class="fal fa-cog"></i>
-					   </span>
-					   <span class="tp-theme-settings-close">
-						  <i class="fal fa-times"></i>
-					   </span>
-					</button>
-				 </div>
-				 <div class="row row-cols-4 gy-2 gx-2">
-					<div class="col">
-					   <div class="tp-theme-color-item tp-color-active">
-					   <button class="tp-theme-color-btn tp-color-settings-btn d-none" data-color-default="#FF3737" type="button" data-color="#FF3737"></button>
-						  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#FF3737"></button>
-					   </div>
-					</div>
-					<div class="col">
-					   <div class="tp-theme-color-item tp-color-active">
-						  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#FBD017"></button>
-					   </div>
-					</div>
-					<div class="col">
-					   <div class="tp-theme-color-item tp-color-active">
-						  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#138c17"></button>
-					   </div>
-					</div>
-					<div class="col">
-					   <div class="tp-theme-color-item tp-color-active">
-						  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#73c100"></button>
-					   </div>
-					</div>
-				 </div>
-			  </div>
-			  <div class="tp-theme-color-input">
-				 <h6>Choose Custom Color</h6>
-				 <input type="color" id="tp-color-setings-input" value="#0b3d2c">
-				 <label id="tp-theme-color-label" for="tp-color-setings-input"></label>
-			  </div>
-		   </div>
-		</div>
-	 </div>`;
+	// 	   <!-- COLOR SETTINGS -->
+	// 	   <div class="tp-theme-settings">
+	// 		  <div class="tp-theme-settings-wrapper">
+	// 			 <div class="tp-theme-settings-open">
+	// 				<button class="tp-theme-settings-open-btn">
+	// 				   <span class="tp-theme-settings-gear">
+	// 					  <i class="fal fa-cog"></i>
+	// 				   </span>
+	// 				   <span class="tp-theme-settings-close">
+	// 					  <i class="fal fa-times"></i>
+	// 				   </span>
+	// 				</button>
+	// 			 </div>
+	// 			 <div class="row row-cols-4 gy-2 gx-2">
+	// 				<div class="col">
+	// 				   <div class="tp-theme-color-item tp-color-active">
+	// 				   <button class="tp-theme-color-btn tp-color-settings-btn d-none" data-color-default="#FF3737" type="button" data-color="#FF3737"></button>
+	// 					  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#FF3737"></button>
+	// 				   </div>
+	// 				</div>
+	// 				<div class="col">
+	// 				   <div class="tp-theme-color-item tp-color-active">
+	// 					  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#FBD017"></button>
+	// 				   </div>
+	// 				</div>
+	// 				<div class="col">
+	// 				   <div class="tp-theme-color-item tp-color-active">
+	// 					  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#138c17"></button>
+	// 				   </div>
+	// 				</div>
+	// 				<div class="col">
+	// 				   <div class="tp-theme-color-item tp-color-active">
+	// 					  <button class="tp-theme-color-btn tp-color-settings-btn" type="button" data-color="#73c100"></button>
+	// 				   </div>
+	// 				</div>
+	// 			 </div>
+	// 		  </div>
+	// 		  <div class="tp-theme-color-input">
+	// 			 <h6>Choose Custom Color</h6>
+	// 			 <input type="color" id="tp-color-setings-input" value="#0b3d2c">
+	// 			 <label id="tp-theme-color-label" for="tp-color-setings-input"></label>
+	// 		  </div>
+	// 	   </div>
+	// 	</div>
+	//  </div>`;
 
-    settings.append(settings_html);
-  }
-  tp_settings_append(false); // if want to enable dark light mode then send "true";
+  //   settings.append(settings_html);
+  // }
+  // tp_settings_append(false); // if want to enable dark light mode then send "true";
 
-  // settings open btn
-  $(".tp-theme-settings-open-btn").on("click", function () {
-    $(".tp-theme-settings-area").toggleClass("settings-opened");
-  });
+  // // settings open btn
+  // $(".tp-theme-settings-open-btn").on("click", function () {
+  //   $(".tp-theme-settings-area").toggleClass("settings-opened");
+  // });
 
-  $(".slider-drag").on("mouseenter", function () {
-    $(".mouseCursor").addClass("cursor-big");
-  });
-  $(".slider-drag").on("mouseleave", function () {
-    $(".mouseCursor").removeClass("cursor-big");
-  });
+  // $(".slider-drag").on("mouseenter", function () {
+  //   $(".mouseCursor").addClass("cursor-big");
+  // });
+  // $(".slider-drag").on("mouseleave", function () {
+  //   $(".mouseCursor").removeClass("cursor-big");
+  // });
 
-  $("a,.sub-menu").on("mouseenter", function () {
-    $(".mouseCursor").addClass("d-none");
-  });
-  $("a,.sub-menu").on("mouseleave", function () {
-    $(".mouseCursor").removeClass("d-none");
-  });
+  // $("a,.sub-menu").on("mouseenter", function () {
+  //   $(".mouseCursor").addClass("d-none");
+  // });
+  // $("a,.sub-menu").on("mouseleave", function () {
+  //   $(".mouseCursor").removeClass("d-none");
+  // });
 
   ////////////////////////////////////////////////////
   // Mouse Custom Cursor

@@ -6,6 +6,8 @@
     Description: Chapa - Printing Services Company HTML5 Template + RTL
     Version: 1.0
 
+    Customized by Xanders Samoth | https://www.linkedin.com/in/xanders-samoth-b2770737/
+
 -----------------------------------------------------------------------------------
 
 /************ TABLE OF CONTENTS ***************
@@ -545,7 +547,7 @@ p {
   --clr-common-border: #0b3d2c;
   --clr-common-placeholder: #777777;
   --clr-common-gray: #acacac;
-  --clr-theme-1: #FF3737;
+  --clr-theme-1: #71BF44;
   --clr-theme-2: #FBD017;
   --clr-bg-1: #FFF9F9;
   --clr-bg-2: #F8F3FF;
@@ -3679,7 +3681,7 @@ div.mean-container a.meanmenu-reveal {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(251, 208, 23, 0) 0%, #FF3737 100%);
+  background: linear-gradient(180deg, rgba(251, 208, 23, 0) 0%, #71BF44 100%);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -4238,7 +4240,7 @@ div.mean-container a.meanmenu-reveal {
 }
 
 .cp-spacial-offer-wrap .swiper-slide:nth-child(2n) .cp-spacial-offer-item .cp-spacial-offer-title a {
-  background: linear-gradient(90.45deg, #FF3737 3.97%, #FBD017 99.84%);
+  background: linear-gradient(90.45deg, #71BF44 3.97%, #FBD017 99.84%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -4252,7 +4254,7 @@ div.mean-container a.meanmenu-reveal {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90.45deg, #FF3737 3.97%, #FBD017 99.84%);
+  background: linear-gradient(90.45deg, #71BF44 3.97%, #FBD017 99.84%);
   position: absolute;
 }
 
@@ -7190,10 +7192,10 @@ div.mean-container a.meanmenu-reveal {
 .cp-news5-title a {
   position: relative;
   display: inline;
-  background-image: -webkit-gradient(linear, left top, right top, from(#ff3737), to(#ff3737));
-  background-image: -webkit-linear-gradient(left, #ff3737 0%, #ff3737 100%);
-  background-image: -o-linear-gradient(left, #ff3737 0%, #ff3737 100%);
-  background-image: linear-gradient(to right, #ff3737 0%, #ff3737 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(#71BF44), to(#71BF44));
+  background-image: -webkit-linear-gradient(left, #71BF44 0%, #71BF44 100%);
+  background-image: -o-linear-gradient(left, #71BF44 0%, #71BF44 100%);
+  background-image: linear-gradient(to right, #71BF44 0%, #71BF44 100%);
   background-size: 0px 2px;
   background-position: 0px 95%;
   -webkit-transition: background-size 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
