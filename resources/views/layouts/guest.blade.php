@@ -104,7 +104,7 @@
                         <div class="cp-header2-bottom-wrap">
                             <div class="cp-header2-bottom-item">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo-black.png') }}" alt="logo" width="80"></a>
+                                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo-black.png') }}" alt="logo" width="80"></a>
                                 </div>
                             </div>
 
