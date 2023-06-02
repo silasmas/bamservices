@@ -121,28 +121,18 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="cp-header2-bottom-item">
-                                <div class="cp-header2-action d-flex align-items-center justify-content-end">
-                                    <div class="d-none d-md-block">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="cp-search-btn"><i class="fas fa-search"></i></a></li>
-                                            <li><a href="javascript:void(0)"><i class="fas fa-user-alt"></i></a></li>
-                                            <li><a href="javascript:void(0)"><i class="fas fa-heart"><span>5</span></i></a></li>
-                                            <li><a href="javascript:void(0)"><i class="fas fa-cart-plus"></i><span>4</span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="cp-header-toggle-btn ml-35 mt--5 d-xl-none">
-                                        <div class="menu-bar">
-                                            <a class="side-toggle" href="javascript:void(0)">
-                                                <div class="bar-icon">
-                                                    <span></span>
-                                                    <span></span>
-                                                    <span></span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="cp-header-btn d-none d-md-block">
+                                <a class="cp-btn" href="{{ route('pricing') }}">
+                                    Commander
+                                    <span class="cp-btn__inner">
+                                        <span class="cp-btn__blobs">
+                                            <span class="cp-btn__blob"></span>
+                                            <span class="cp-btn__blob"></span>
+                                            <span class="cp-btn__blob"></span>
+                                            <span class="cp-btn__blob"></span>
+                                        </span>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </div>
