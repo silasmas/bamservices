@@ -560,15 +560,15 @@ p {
   --clr-bg-9: #29ABE2;
   --clr-bg-10: #A346B3;
   --clr-bg-11: #0077B7;
-  --clr-bg-12: #FFECE2;
-  --clr-bg-13: #FFF7F3;
+  --clr-bg-12: #f1fcf2;
+  --clr-bg-13: #fcfffd;
   --clr-bg-14: #F7F7F7;
   --clr-bg-15: #F7F5FA;
   --clr-bg-16: #219FFF;
   --clr-bg-17: #071311;
   --clr-bg-18: #F3F3F3;
   --clr-bg-19: rgb(242, 242, 242);
-  --clr-bg-20: #FFEBEB;
+  --clr-bg-20: #ECFFEB;
   --clr-border-1: #2E2E2E;
   --clr-border-2: rgba(213, 213, 213, 0.3568627451);
   --clr-border-3: rgba(213, 213, 213, 0.3607843137);
