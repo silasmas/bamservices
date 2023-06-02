@@ -1,0 +1,455 @@
+/*----------------------------------------
+    11. team css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-team {
+  &-title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  &-img {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0;
+    max-height: 450px;
+    @media #{$sm, $xs} {
+      max-height: 500px;
+    }
+    img {
+      @include transition(0.5s);
+    }
+  }
+
+  &-name {
+    font-size: 20px;
+    color: var(--clr-common-white);
+    margin-bottom: 10px;
+
+    a {
+      @include transition(0.3s);
+    }
+  }
+
+  &-position {
+    color: #8f8f8f;
+  }
+
+  &-social {
+    top: 25px;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(0.5s);
+    text-align: center;
+
+    @include rtl {
+      right: unset;
+      left: 0;
+    }
+
+    a {
+      display: block;
+      background: var(--clr-common-text);
+      width: 30px;
+      height: 30px;
+      color: var(--clr-common-white);
+      line-height: 30px;
+      margin: 10px 0;
+      font-size: 15px;
+      @include transition(0.3s);
+
+      &:hover {
+        background: var(--clr-theme-1);
+      }
+    }
+  }
+
+  &-content {
+    position: absolute;
+    background: var(--clr-common-black);
+    bottom: -65px;
+    left: 25px;
+    padding: 15px 30px;
+    color: var(--clr-common-white);
+    text-align: start;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(0.5s);
+
+    @include rtl {
+      left: unset;
+      right: 30px;
+    }
+  }
+
+  &-item {
+    @include border-radius(10px);
+    line-height: 1;
+    @include transition(0.3s);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:hover {
+      .cp-team {
+
+        &-img {
+          img {
+            @include transform(scale(1.06));
+          }
+        }
+
+        &-content {
+          background: var(--clr-common-black);
+          bottom: 25px;
+          opacity: 1;
+          visibility: visible;
+        }
+
+
+        &-social {
+          right: 25px;
+          opacity: 1;
+          visibility: visible;
+
+          @include rtl {
+            right: unset;
+            left: 25px;
+          }
+        }
+      }
+
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+
+
+  &-pagination {
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #D9D9D9;
+      opacity: 1;
+
+      &-active,
+      &:hover {
+        background: var(--clr-theme-1);
+      }
+    }
+  }
+
+  &-shape-img {
+    bottom: 0;
+    left: 0;
+    opacity: 0.25;
+
+    @include rtl {
+      left: unset;
+      right: 0;
+    }
+  }
+}
+
+// team 2 css 
+// .cp-team2 {
+//   &-img {
+//     img {
+//       @include transition(0.3s);
+//     }
+//   }
+
+//   &-position {
+//     font-size: 16px;
+//     margin-bottom: 10px;
+//     display: inline-block;
+//     color: #5B5B5B;
+//   }
+
+//   &-name {
+//     font-size: 24px;
+//     margin-bottom: 10px;
+
+//     a {
+//       @include transition(0.3s);
+//     }
+
+//     @media #{$xl, $md} {
+//       font-size: 24px;
+//     }
+
+//     @media #{$md} {
+//       font-size: 20px;
+//     }
+//   }
+
+//   &-social {
+//     display: flex;
+//     gap: 5px 15px;
+//     background: var(--clr-common-black);
+//     bottom: 20px;
+//     left: -50%;
+//     padding: 10px 20px;
+//     transform: translateX(-50%);
+//     @include transition(0.5s);
+//     opacity: 0;
+//     visibility: hidden;
+
+//     @include rtl {
+//       left: unset;
+//       right: -50%;
+//       transform: translateX(-3%);
+//     }
+
+//     a {
+//       color: var(--clr-common-white);
+//       font-weight: 400;
+
+//       &:hover {
+//         color: var(--clr-theme-1);
+//       }
+//     }
+//   }
+
+//   &-item {
+//     &:hover {
+//       .cp-team2 {
+//         &-img {
+//           img {
+//             @include transform(scale(1.06) rotate(2deg));
+//           }
+//         }
+
+//         &-social {
+//           left: 34%;
+//           opacity: 1;
+//           visibility: visible;
+
+//           @include rtl {
+//             left: unset;
+//             right: 6%;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+// .cp-team2-active .swiper-slide:nth-child(even) .cp-team2-item {
+//   margin-top: 60px;
+
+//   @media #{$md, $sm, $xs} {
+//     margin-top: 0;
+//   }
+// }
+
+// .cp-team2-mob-space {
+//   @media #{$md, $sm, $xs} {
+//     padding-bottom: 105px;
+//   }
+// }
+.cp-team2-wrap {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  @media #{$lg, $md} {
+    grid-template-columns: auto auto auto;
+  }
+
+  @media #{$md, $sm} {
+    grid-template-columns: auto auto;
+  }
+
+  @media #{$xs} {
+    grid-template-columns: auto;
+  }
+}
+
+.cp-team2-img {
+  @include transition(0.5s);
+  opacity: 0;
+}
+
+.cp-team2-content {
+  top: 50%;
+  display: block;
+  width: 100%;
+  line-height: 1;
+  @include transition(0.5s);
+  @include transform(translateY(-50%));
+}
+
+.cp-team2-border {
+  border-top: 1px solid var(--clr-border-2);
+  border-bottom: 1px solid var(--clr-border-2);
+
+  @media #{$xs} {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
+
+.cp-team2-name {
+  font-size: 28px;
+
+  @media #{$sm, $xs} {
+    font-size: 25px;
+  }
+
+  a {
+    @include transition(0.4s);
+  }
+}
+
+.cp-team2-position {
+  @include transition(0.5s);
+}
+
+.cp-team2-item {
+  text-align: center;
+
+  @media #{$xs} {
+    border-top: 1px solid var(--clr-border-2);
+    border-bottom: 1px solid var(--clr-border-2);
+  }
+
+  &:hover,
+  &.active {
+    .cp-team2-img {
+      opacity: 1;
+    }
+
+    .cp-team2-content {
+      top: 75%;
+    }
+
+    .cp-team2-name {
+      a {
+        color: var(--clr-common-white);
+      }
+    }
+
+    .cp-team2-position {
+      color: var(--clr-common-white);
+    }
+  }
+}
+
+
+
+
+
+// team details css
+.cp-team-d-name {
+  font-size: 30px;
+
+  @media #{$xs} {
+    font-size: 26px;
+  }
+}
+
+.cp-team-d-social a {
+  margin: 0 7px;
+  color: var(--clr-common-placeholder);
+
+  &:hover {
+    color: var(--clr-theme-1);
+  }
+}
+
+.cp-team-d-left {
+  box-shadow: 0px 10px 30px rgba(80, 80, 80, 0.05);
+}
+
+.cp-team-d-content {
+  padding: 30px 10px;
+}
+
+.cp-team-d-bio-title {
+  font-size: 30px;
+
+  @media #{$xs} {
+    font-size: 26px;
+  }
+}
+
+.cp-team-d-bio {
+  padding: 30px;
+
+  @media #{$xxs} {
+    padding: 30px 20px;
+  }
+}
+
+.cp-team-d-work-title {
+  font-size: 25px;
+  padding: 23px 30px;
+  line-height: 1;
+  margin-bottom: 0;
+
+  @media #{$xxs} {
+    padding: 23px 20px;
+  }
+
+  @media #{$xs} {
+    font-size: 23px;
+  }
+
+}
+
+.cp-team-d-work {
+  box-shadow: 0px 10px 30px rgba(80, 80, 80, 0.05);
+}
+
+.cp-team-d-position {
+  font-size: 16px;
+  color: var(--clr-theme-1);
+  margin-bottom: 20px;
+}
+
+.cp-team-d-company {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.cp-team-d-work-wrap {
+  padding: 35px 30px;
+
+  @media #{$xxs} {
+    padding: 35px 20px;
+  }
+}
+
+.cp-team-d-icon {
+  right: 0;
+  top: 0;
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--clr-border-4);
+  line-height: 51px;
+  text-align: center;
+  @include border-radius(50%);
+
+  @include rtl {
+    right: unset;
+    left: 0;
+  }
+}
+
+.cp-team-d-right {
+  @media #{$lg, $md, $sm, $xs} {
+    padding-inline-start: 0;
+  }
+}

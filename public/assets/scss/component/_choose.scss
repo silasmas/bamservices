@@ -1,0 +1,40 @@
+/*----------------------------------------
+    15. choose css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-choose-experience {
+	background: var(--clr-theme-2);
+	padding: 20px;
+	display: flex;
+	gap: 15px 20px;
+	flex-wrap: wrap;
+}
+
+.cp-choose-img-right-wrap {
+	@media #{$xs} {
+		margin-top: 0;
+	}
+}
+
+.cp-choose2-img {
+	@media #{$xs} {
+		padding-top: 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 542px;
+		height: 542px;
+		left: 0;
+		top: 0;
+		background: linear-gradient(180deg, rgba(255, 55, 55, 0.17) 0%, rgba(255, 255, 255, 0) 100%);
+		border-radius: 50%;
+		z-index: 1;
+
+		@media #{$xs} {
+			display: none;
+		}
+	}
+}

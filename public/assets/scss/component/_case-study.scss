@@ -1,0 +1,127 @@
+/*----------------------------------------
+    12. case study css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-case-study {
+  &-img {
+    @include border-radius(20px);
+    overflow: hidden;
+
+    &:hover {
+      img {
+        @include transform(scale(1.06));
+      }
+    }
+  }
+}
+
+
+
+
+.cp-case-study-item .tp-hover-wrapper {
+  background-color: var(--clr-common-white);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px;
+
+  .tp-hover-title {
+    font-size: 20px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+// case study 3 css 
+.cp-case-study3-img img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.cp-case-study3-active {
+  margin-inline-start: 50px;
+
+  @media #{$xl, $lg, $md, $sm, $xs} {
+    margin-inline-start: 0;
+  }
+}
+
+
+
+.cp-case-study3-content {
+  width: 490px;
+  bottom: 20px;
+  position: absolute;
+  background: var(--clr-common-white);
+  left: 40px;
+  padding: 30px;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(0.3s);
+
+  @media #{$xxxl} {
+    width: 350px;
+  }
+
+  @media #{$xxl, $lg} {
+    width: 350px;
+    left: 30px;
+  }
+
+  @media #{$xxs} {
+    width: 280px;
+    left: 10px;
+  }
+}
+
+.cp-case-study3-item {
+  position: relative;
+
+  &:hover {
+    .cp-case-study3-content {
+      bottom: 40px;
+      opacity: 1;
+      visibility: visible;
+
+      @media #{$xxl, $lg, $md, $xxs} {
+        bottom: 30px;
+      }
+
+      @media #{$xxs} {
+        bottom: 10px;
+      }
+    }
+  }
+
+}
+
+.cp-case-study3-content p {
+  margin-bottom: 0;
+}
+
+.cp-case-study3-title {
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--clr-common-heading);
+  margin-bottom: 20px;
+
+  @media #{$xxs} {
+    font-size: 18px;
+
+  }
+
+  a {
+    @include transition(0.3s);
+  }
+}
+
+.cp-case-study4-active {
+  margin-inline-end: 50px;
+
+  @media #{$xl, $lg, $md, $sm, $xs} {
+    margin-inline-end: 0;
+  }
+}

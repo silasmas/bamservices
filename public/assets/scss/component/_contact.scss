@@ -1,0 +1,354 @@
+/*----------------------------------------
+    23. contact css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-input-field {
+  margin-bottom: 20px;
+  position: relative;
+
+  i {
+    position: absolute;
+    right: 18px;
+    z-index: 1;
+    top: 53px;
+
+    @include rtl {
+      right: unset;
+      left: 18px;
+    }
+  }
+
+  label {
+    margin-bottom: 8px;
+    display: block;
+    text-transform: capitalize;
+  }
+
+  .cp-in {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    @include transform(translateY(50%));
+    line-height: 1;
+    color: #00000082;
+
+    @include rtl {
+      right: unset;
+      left: 14px;
+    }
+  }
+
+  input,
+  textarea {
+    display: block;
+    height: 56px;
+    width: 100%;
+    border: 1px solid var(--clr-border-5);
+    padding: 0 20px;
+    outline: 0;
+    @include border-radius(6px);
+    @include transition(0.3s);
+    padding-inline-end: 40px;
+
+    &:focus {
+      border: 1px solid var(--clr-theme-1);
+    }
+  }
+
+  textarea {
+    padding: 10px 20px;
+    min-height: 200px;
+    padding-inline-end: 40px;
+    resize: none;
+
+    @media #{$xs} {
+      min-height: 150px;
+    }
+  }
+
+  &.textarea {
+    i {
+      top: 50px;
+    }
+  }
+
+  &.checkbox {
+    input {
+      width: 12px;
+      height: 12px;
+      border: 1px solid #7B7B7B;
+      border-radius: 0;
+      display: inline;
+      margin-inline-end: 10px;
+    }
+
+    label {
+      display: inline-block;
+      font-weight: 500;
+      margin-bottom: 0
+    }
+  }
+}
+
+.cp-quote-form {
+  .nice-select {
+    @include border-radius(0);
+    border: 1px solid var(--clr-border-5);
+    display: block;
+    height: 56px;
+    line-height: 56px;
+    width: 100%;
+    margin-bottom: 20px;
+    @include border-radius(6px);
+    padding-inline-start: 18px;
+    padding-inline-end: 30px;
+
+    .option {
+      padding-inline-start: 18px;
+      padding-inline-end: 29px;
+      text-align: unset;
+    }
+
+    @include rtl {
+      text-align: right !important;
+
+      &::after {
+        right: unset;
+        left: 12px;
+      }
+    }
+
+    .list {
+      width: 100%;
+      @include border-radius(0);
+    }
+  }
+
+  .nice-select:active,
+  .nice-select.open,
+  .nice-select:focus {
+    border-color: #EBEBEB;
+  }
+
+}
+
+.cp-quote-title {
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 25px;
+
+  @media #{$sm, $xs} {
+    font-size: 24px;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    right: 0;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    background: var(--clr-border-5);
+
+    @include rtl {
+      right: unset;
+      left: 0;
+    }
+  }
+
+  span {
+    background: var(--clr-common-white);
+    display: inline-block;
+    padding-inline-end: 20px;
+  }
+}
+
+.cp-quote-wrapper {
+  padding: 40px 50px;
+
+  @media #{$sm, $xs} {
+    padding: 40px 30px;
+  }
+
+  @media #{$xxs} {
+    padding: 40px 20px;
+  }
+}
+
+.cp-contact-title {
+  font-size: 35px;
+
+  @media #{$xxs} {
+    font-size: 28px;
+  }
+}
+
+.cp-contact-subtitle {
+  font-size: 30px;
+
+  @media #{$xxs} {
+    font-size: 28px;
+  }
+}
+
+
+.cp-input-wrap {
+  border: 1px dashed var(--clr-theme-1);
+  position: relative;
+  cursor: pointer;
+  padding: 40px 20px;
+
+  .cp-btn {
+    z-index: -1;
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.cp-checkout-right {
+  @media #{$lg, $md, $sm, $xs} {
+    margin-inline-start: 0;
+  }
+}
+
+.cp-checkout-left {
+  @media #{$lg, $md, $sm, $xs} {
+    margin-inline-end: 0;
+  }
+}
+
+.cp-contact-info {
+  ul {
+    li {
+      margin-bottom: 25px;
+      display: flex;
+
+      br {
+        @media #{$md, $sm, $xs} {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-size: 18px;
+        color: #4D4D4D;
+        margin-top: -5px;
+        @include transition(0.3s);
+
+        &:hover {
+          color: var(--clr-theme-1);
+        }
+
+      }
+
+      i {
+        margin-inline-end: 20px;
+      }
+    }
+  }
+}
+
+// map css 
+.et-contact-map {
+  overflow: hidden;
+  position: relative;
+  min-height: 450px;
+
+  iframe {
+    width: 102%;
+    height: 102%;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+  }
+}
+
+// sign in / up css 
+.cp-signin-wrap {
+  padding: 40px;
+  border: 1px solid var(--clr-border-4);
+  margin: 0 40px;
+
+  @media #{$xl, $lg, $md, $sm, $xs} {
+    margin: 0;
+  }
+
+  @media #{$xxs} {
+    padding: 40px 20px;
+  }
+
+  .forgotpassword {
+    color: var(--clr-theme-1);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    @include transition(0.3s);
+
+    &:hover {
+      color: var(--clr-theme-2);
+      text-underline-offset: 4px;
+    }
+  }
+
+  .no-account {
+    span {
+      font-size: 18px;
+      font-weight: 500;
+
+      a {
+        color: var(--clr-theme-1);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        @include transition(0.3s);
+
+        &:hover {
+          color: var(--clr-theme-2);
+          text-underline-offset: 4px;
+        }
+      }
+    }
+  }
+
+  .sign-flex {
+    flex-wrap: wrap;
+    gap: 10px 30px;
+  }
+}
+
+.cp-signin-title {
+  font-size: 30px;
+  margin-bottom: 55px;
+}
+
+.cp-sign-btn {
+  .cp-btn {
+    padding: 0 60px;
+    height: 50px;
+    line-height: 50px;
+  }
+}

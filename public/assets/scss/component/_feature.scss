@@ -1,0 +1,212 @@
+/*----------------------------------------
+    09. feature css 
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-feature {
+    &-icon {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            background: var(--clr-common-white);
+            border-radius: 50%;
+            z-index: -1;
+            left: 14px;
+            bottom: 10px;
+
+            @include rtl {
+                left: unset;
+                right: 14px;
+            }
+        }
+    }
+
+    &-text {
+        margin-bottom: 0;
+    }
+
+    &-img {
+        right: 40px;
+        top: 40px;
+        opacity: 0.15;
+
+        @include rtl {
+            right: unset;
+            left: 40px;
+        }
+    }
+
+    &-item {
+        &:hover {
+            .cp-feature-icon {
+                img {
+                    animation: bounce 1s;
+                }
+            }
+        }
+    }
+}
+
+
+// feature 3 css
+.cp-feature-item.two .cp-feature-icon::before {
+    background: var(--clr-theme-1);
+    opacity: 0.1;
+}
+
+
+// offer css
+.cp-spacial-offer-item {
+    position: relative;
+    line-height: 1;
+    cursor: pointer;
+
+    .cp-spacial-offer-img {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-50%) scale(0.5);
+        @include transition(0.3s);
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        z-index: 100;
+        transform-origin: bottom;
+    }
+
+    &:hover {
+        .cp-spacial-offer-img {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) scale(1);
+        }
+    }
+}
+
+.cp-spacial-offer-title {
+    font-weight: 400;
+    font-size: 90px;
+    text-align: center;
+
+    @media #{$xxxl} {
+        font-size: 70px;
+    }
+
+    @media #{$xxl} {
+        font-size: 60px;
+    }
+
+    @media #{$xl, $lg, $md} {
+        font-size: 50px;
+    }
+
+    @media #{$sm, $xs} {
+        font-size: 40px;
+    }
+
+    a {
+        @include transition(0.3s);
+    }
+}
+
+.cp-spacial-offer-wrap {
+    display: flex;
+}
+
+.cp-spacial-offer-wrap .swiper-slide:nth-child(2n) .cp-spacial-offer-item .cp-spacial-offer-title {
+    a {
+        background: linear-gradient(90.45deg, #FF3737 3.97%, #FBD017 99.84%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        position: relative;
+        display: inline-block;
+
+        &::before {
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90.45deg, #FF3737 3.97%, #FBD017 99.84%);
+            position: absolute;
+        }
+    }
+}
+
+.cp-offer-active {
+    overflow: visible;
+
+    .swiper-wrapper {
+        -webkit-transition-timing-function: linear !important;
+        -o-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+        overflow: visible;
+    }
+
+    p {
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 65px;
+    }
+}
+
+.cp-offer-border-bottom {
+    padding-bottom: 35px;
+    margin-bottom: 27px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: #D9D9D9;
+        width: 1410px;
+        margin: auto;
+        text-align: center;
+        left: 0;
+        right: 0;
+    }
+}
+
+.cp-offer-border-top::before {
+    content: "";
+    position: absolute;
+    top: 95px;
+    height: 2px;
+    background: #D9D9D9;
+    width: 1410px;
+    margin: auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+
+}
+
+.cp-offer-space {
+    padding-top: 240px;
+
+    p {
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+
+.cp-feature3-img img {
+    width: 100%;
+    @include border-radius(690px);
+}
+
+.cp-choose-space {
+    @media #{$lg, $md, $sm, $xs} {
+        padding-top: 140px;
+        padding-bottom: 90px;
+    }
+}

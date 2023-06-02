@@ -1,0 +1,381 @@
+/*----------------------------------------
+    08. about css 
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-about {
+  &-inner {
+    @include border-radius(920px);
+    overflow: hidden;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    height: 918px;
+    width: 918px;
+    margin: 35px auto;
+
+    @media #{$xxl, $xl, $lg} {
+      height: 700px;
+      width: 700px;
+    }
+
+    @media #{$md} {
+      height: 600px;
+      width: 600px;
+    }
+
+    @media #{$sm} {
+      height: 500px;
+      width: 500px;
+    }
+
+    @media #{$xs} {
+      height: 500px;
+      width: 400px;
+      @include border-radius(200px);
+    }
+
+    @media #{$xxs} {
+      width: 285px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--clr-theme-1);
+      opacity: 0.65;
+      z-index: -1;
+    }
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: 90px;
+    color: var(--clr-common-white);
+
+    @media #{$xxl, $xl, $lg} {
+      font-size: 60px;
+    }
+
+    @media #{$md, $sm} {
+      font-size: 45px;
+    }
+
+    @media #{$xs} {
+      font-size: 45px;
+    }
+
+    @media #{$xxs} {
+      font-size: 40px;
+    }
+
+
+    span {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--clr-common-white);
+    }
+  }
+
+  &-subtitle {
+    font-weight: 500;
+    color: var(--clr-common-white);
+    display: inline-block;
+  }
+
+  &-shape {
+    &-img {
+      &.four {
+        bottom: 70px;
+        left: -325px;
+
+        @include rtl {
+          left: unset;
+          right: -326px;
+        }
+
+        @media #{$xxl} {
+          left: -150px;
+
+          @include rtl {
+            right: -150px;
+          }
+        }
+
+        @media #{$xl} {
+          left: -200px;
+
+          @include rtl {
+            right: -200px;
+          }
+        }
+
+        @media #{$lg} {
+          left: -80px;
+
+          @include rtl {
+            right: -80px;
+          }
+        }
+      }
+
+      &.five {
+        left: 40px;
+        position: absolute;
+        top: 70px;
+
+        @include rtl {
+          left: unset;
+          right: 40px;
+        }
+      }
+    }
+
+    &.one {
+      width: 116px;
+      height: 116px;
+      background: var(--clr-theme-2);
+      border-radius: 50%;
+      left: -230px;
+      bottom: 28px;
+
+      @include rtl {
+        left: unset;
+        right: -230px;
+      }
+
+      @media #{$xxl} {
+        left: -55px;
+
+        @include rtl {
+          right: -55px;
+        }
+      }
+
+      @media #{$xl} {
+        left: -100px;
+
+        @include rtl {
+          right: -100px;
+        }
+      }
+    }
+
+    &.two {
+      left: -304px;
+      width: 64px;
+      height: 64px;
+      background: var(--clr-theme-2);
+      border-radius: 50%;
+      bottom: -15px;
+
+      @include rtl {
+        left: unset;
+        right: -304px;
+      }
+
+      @media #{$xxl} {
+        left: -130px;
+
+        @include rtl {
+          right: -130px;
+        }
+      }
+
+      @media #{$xl} {
+        left: -180px;
+
+        @include rtl {
+          right: -180px;
+        }
+      }
+    }
+
+    &.three {
+      width: 416px;
+      height: 416px;
+      border-radius: 50%;
+      background: linear-gradient(215.54deg, rgba(251, 208, 23, 0.41) 14.28%, rgba(251, 208, 23, 0) 82.95%);
+      opacity: 0.4;
+      top: 70px;
+      right: -180px;
+      z-index: -1;
+
+      @include rtl {
+        right: unset;
+        left: -180px;
+      }
+
+      @media #{$xxl, $xl, $lg} {
+        width: 300px;
+        height: 300px;
+        right: -90px;
+
+        @include rtl {
+          left: -90px;
+        }
+      }
+
+      @media #{$md, $sm, $xs} {
+        right: 0;
+        width: 250px;
+        height: 250px;
+
+        @include rtl {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// About 2 css 
+
+.cp-about2 {
+  &-content {
+    padding-inline-start: 35px;
+  }
+
+  &-img-wrap {
+    padding-inline-start: 100px;
+    padding-bottom: 60px;
+
+    @media #{$md, $sm} {
+      padding-inline-start: 0;
+    }
+
+    @media #{$xs} {
+      padding-inline-start: 0;
+      padding-bottom: 0;
+      padding-inline-end: 0;
+    }
+  }
+
+  &-img {
+    &-sub {
+      bottom: 0;
+      left: 0;
+      box-shadow: 10px 15px 40px rgba(201, 201, 201, 0.5);
+      padding: 10px;
+      background: var(--clr-common-white);
+
+      @include rtl {
+        left: unset;
+        right: 0;
+      }
+    }
+
+    &-main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #071311;
+      opacity: 0.2;
+    }
+  }
+
+  &-video {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  &-content {
+    @media #{$xl, $lg, $md, $sm, $xs} {
+      padding-inline-start: 0;
+    }
+  }
+}
+
+.cp-about2-img-main {
+  .cp-img-blur {
+    min-height: 600px;
+
+    @media #{$xxs} {
+      min-height: 350px;
+    }
+  }
+}
+
+// about 3 css
+.cp-about3-area {
+  @media #{$lg, $md, $sm, $xs} {
+    padding-top: 150px;
+    padding-bottom: 60px;
+  }
+}
+
+.cp-about3-cta-text {
+  p {
+    font-weight: 600;
+    color: var(--clr-theme-1);
+  }
+}
+
+.cp-about3-cta {
+  background: var(--clr-common-white);
+  text-align: center;
+  position: absolute;
+  padding: 30px;
+  bottom: 0;
+  left: 0;
+}
+
+.cp-about3-achievement {
+  display: grid;
+  grid-template-columns: 27% auto;
+  gap: 5px 0;
+
+  @media #{$sm} {
+    grid-template-columns: auto auto;
+  }
+
+  @media #{$xs} {
+    grid-template-columns: auto;
+  }
+}
+
+.cp-about3-video {
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  border: 1px solid #5B5B5B;
+  line-height: 54px;
+  text-align: center;
+  border-radius: 50%;
+  @include transition(0.3s);
+
+  i {
+    color: #5B5B5B;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background: var(--clr-theme-1);
+    border: 1px solid var(--clr-theme-1);
+
+    i {
+      color: var(--clr-common-white);
+    }
+  }
+}
+
+.cp-about3-img img {
+  max-width: 100%;
+}
+
+.cp-about3-content {
+  @media #{$xl, $lg, $md, $sm, $xs} {
+    padding-inline-start: 0px;
+  }
+}

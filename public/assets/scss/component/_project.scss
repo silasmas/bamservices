@@ -1,0 +1,155 @@
+/*----------------------------------------
+    20. project css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-project {
+  &-content {
+    padding: 30px 35px;
+    border: 1px solid var(--clr-border-4);
+    border-top: 0;
+
+    @media #{$xxs} {
+      padding: 20px 25px;
+    }
+  }
+}
+
+.cp-project-cat {
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 10px;
+  @include transition(0.3s);
+}
+
+.cp-project-title {
+  font-size: 24px;
+
+  a {
+    @include transition(0.3s);
+  }
+
+  @media #{$xl, $lg, $xxs} {
+    font-size: 20px;
+  }
+}
+
+.cp-project-btn {
+  i {
+    margin-inline-start: 10px;
+  }
+
+  &:hover {
+    padding-inline-start: 10px;
+  }
+}
+
+.cp-project {
+  &-img {
+    overflow: hidden;
+  }
+
+  &-item {
+    &:hover {
+      .cp-project {
+        &-img {
+          img {
+            @include transform(scale(1.06));
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.cp-project-d-title {
+  font-size: 35px;
+
+  @media #{$lg, $md, $sm, $xs} {
+    font-size: 30px;
+  }
+
+  @media #{$xxs} {
+    font-size: 26px;
+  }
+}
+
+.cp-project-d-subtitle {
+  font-size: 30px;
+
+  @media #{$lg, $md, $sm, $xs} {
+    font-size: 25px;
+  }
+}
+
+.cp-banner2-button {
+  &.cp-project-button-prev {
+    left: -200px;
+
+    @media #{$xxxl} {
+      left: -85px;
+    }
+  }
+
+  &.cp-project-button-next {
+    left: auto;
+    right: -200px;
+
+    @media #{$xxxl} {
+      right: -85px;
+    }
+
+    &::before {
+      left: auto;
+      right: 52%;
+    }
+  }
+}
+
+
+.cp-project-description-item {
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 17px;
+  }
+}
+
+.cp-project-description-wrap {
+  box-shadow: 0px 10px 30px rgba(80, 80, 80, 0.05);
+  padding: 35px 30px;
+  border: 1px solid var(--clr-border-2);
+}
+
+.cp-project-description-link ul li a {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 10px 0;
+  font-weight: 500;
+  @include transition(0.3s);
+}
+
+.cp-related-project-nav {
+  @media #{$xxl, $xl, $lg, $md, $sm, $xs} {
+    display: none;
+  }
+}
+
+.cp-project-btn {
+  @include transition(0.3s);
+
+  a {
+    @include transition(0.3s);
+  }
+}

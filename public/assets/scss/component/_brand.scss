@@ -1,0 +1,26 @@
+/*----------------------------------------
+    18. brand css
+----------------------------------------*/
+@use "../abstract" as *;
+
+.cp-brand-img {
+  width: 120px;
+
+  @media #{$md, $sm, $xs} {
+    margin: auto;
+  }
+}
+
+.cp-brand3-item {
+  text-align: center;
+
+  img {
+    opacity: 0.25;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
