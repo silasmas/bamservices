@@ -121,18 +121,38 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="cp-header-btn d-none d-md-block">
-                                <a class="cp-btn" href="{{ route('pricing') }}">
-                                    Commander
-                                    <span class="cp-btn__inner">
-                                        <span class="cp-btn__blobs">
-                                            <span class="cp-btn__blob"></span>
-                                            <span class="cp-btn__blob"></span>
-                                            <span class="cp-btn__blob"></span>
-                                            <span class="cp-btn__blob"></span>
+                            <div class="cp-header-btn d-md-flex align-items-center justify-content-end mt-md-2">
+                                <div class="cp-header2-action d-none d-md-inline-block me-4">
+                                    <a class="cp-btn" href="{{ route('pricing') }}">
+                                        Commander
+                                        <span class="cp-btn__inner">
+                                            <span class="cp-btn__blobs">
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                            </span>
                                         </span>
-                                    </span>
-                                </a>
+                                    </a>
+                                </div>
+                                <div class="cp-header2-action d-inline-flex align-items-center justify-content-end">
+                                    <div class="d-none d-md-block">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" class="cp-search-btn"><i class="fas fa-search"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="cp-header-toggle-btn ms-4 mt-0 d-xl-none">
+                                        <div class="menu-bar">
+                                            <a class="side-toggle" href="javascript:void(0)">
+                                                <div class="bar-icon">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
