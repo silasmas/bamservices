@@ -168,7 +168,7 @@
                                 <div class="cp-services-img w-img">
                                     <img src="{{ asset('assets/img/service/services-1.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service', ['id' => 1]) }}">Cartes de vœux</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 1]) }}">Cartes de vœux</a></h4>
                             </div>
                         </div>
 
@@ -178,7 +178,7 @@
                                 <div class="cp-services-img w-img">
                                     <img src="{{ asset('assets/img/service/services-2.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service', ['id' => 2]) }}">Impression t-shirt</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 2]) }}">Impression t-shirt</a></h4>
                             </div>
                         </div>
 
@@ -188,7 +188,7 @@
                                 <div class="cp-services-img w-img">
                                     <img src="{{ asset('assets/img/service/services-3.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service', ['id' => 3]) }}">Autocollants et étiquettes</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 3]) }}">Autocollants et étiquettes</a></h4>
                             </div>
                         </div>
 
@@ -198,7 +198,7 @@
                                 <div class="cp-services-img w-img">
                                     <img src="{{ asset('assets/img/service/services-4.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service', ['id' => 4]) }}">Conception cartes de visite</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 4]) }}">Conception cartes de visite</a></h4>
                             </div>
                         </div>
 
@@ -208,7 +208,7 @@
                                 <div class="cp-services-img w-img">
                                     <img src="{{ asset('assets/img/service/services-5.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service', ['id' => 5]) }}">Conception stationnaire</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 5]) }}">Conception stationnaire</a></h4>
                             </div>
                         </div>
 
@@ -218,7 +218,7 @@
                                 <div class="cp-services-img w-img">
                                     <img src="{{ asset('assets/img/service/services-6.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service', ['id' => 6]) }}">Conception cartes de bannière</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 6]) }}">Conception cartes de bannière</a></h4>
                             </div>
                         </div>
 

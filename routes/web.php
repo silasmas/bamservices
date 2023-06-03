@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\Web\HomeController@index')->name('home');
 Route::get('/about', 'App\Http\Controllers\Web\HomeController@about')->name('about');
 Route::get('/service', 'App\Http\Controllers\Web\HomeController@service')->name('service');
+Route::get('/service/{id}', 'App\Http\Controllers\Web\HomeController@serviceDatas')->whereNumber('id')->name('service.datas');
 Route::get('/pricing', 'App\Http\Controllers\Web\HomeController@pricing')->name('pricing');
 Route::get('/contact', 'App\Http\Controllers\Web\HomeController@contact')->name('contact');
 Route::get('/symlink', function () {return view('symlink');})->name('generate_symlink'); // Generate symbolic link

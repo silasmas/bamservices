@@ -47,11 +47,21 @@ class HomeController extends Controller
     }
 
     /**
-     * GET: Service page
+     * GET: All services page
      *
      * @return \Illuminate\View\View
      */
     public function service()
+    {
+        return view('service');
+    }
+
+    /**
+     * GET: Service details page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function serviceDatas()
     {
         return view('service');
     }
