@@ -528,7 +528,7 @@
                             <div class="col-lg-4">
                                 <div class="cp-footer2-page text-lg-end mb-10">
                                     <ul>
-                                        <li><a href="#">Privacy & Terms Condition</a></li>
+                                        <li><a href="#">Confidentialité et conditions d'utilisation</a></li>
                                     </ul>
                                 </div>
                             </div>

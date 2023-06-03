@@ -428,7 +428,7 @@
                             <div class="col-xl-3 col-lg-4 col-sm-6 c1 c2 c4 grid-item">
                                 <div class="product-single">
                                     <div class="product-thumb">
-                                        <a href="{{ route('pricing', ['id' => 1]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-01.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-11.png') }}" alt="product">
                                         </a>
@@ -440,7 +440,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="{{ route('pricing', ['id' => 2]) }}">T-shirts & débardeurs</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirts & débardeurs</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-old">139.00$</span>
@@ -454,7 +454,7 @@
                                 <div class="product-single">
                                     <div class="product-thumb">
                                         <span class="product-badge product-badge-new">new</span>
-                                        <a href="{{ route('pricing', ['id' => 3]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-06.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-11.png') }}" alt="product">
                                         </a>
@@ -466,7 +466,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="{{ route('pricing', ['id' => 4]) }}">T-shirt femme blanc</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt femme blanc</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-now">120.00$</span>
@@ -479,7 +479,7 @@
                                 <div class="product-single">
                                     <div class="product-thumb">
                                         <span class="product-badge product-badge-new">nouveau</span>
-                                        <a href="{{ route('pricing', ['id' => 5]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-10.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-09.png') }}" alt="product">
                                         </a>
@@ -491,7 +491,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="{{ route('pricing', ['id' => 6]) }}">T-shirt tendance</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt tendance</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-now">12.00$</span>
@@ -504,7 +504,7 @@
                                 <div class="product-single">
                                     <div class="product-thumb">
                                         <span class="product-badge product-badge-sale">vente</span>
-                                        <a href="{{ route('pricing', ['id' => 7]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-07.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-09.png') }}" alt="product">
                                         </a>
@@ -516,7 +516,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="{{ route('pricing', ['id' => 8]) }}">T-shirt vert foncé</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt vert foncé</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-now">100.00$</span>
@@ -529,7 +529,7 @@
                                 <div class="product-single">
                                     <div class="product-thumb">
                                         <span class="product-badge product-badge-best">meilleure vente</span>
-                                        <a href="{{ route('pricing', ['id' => 9]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-08.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-11.png') }}" alt="product">
                                         </a>
@@ -541,7 +541,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="{{ route('pricing', ['id' => 10]) }}">T-shirt blanc</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt blanc</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-old">120.00$</span>
@@ -554,7 +554,7 @@
                             <div class="col-xl-3 col-lg-4 col-sm-6 c1 c3 c2 c4 grid-item">
                                 <div class="product-single">
                                     <div class="product-thumb">
-                                        <a href="{{ route('pricing', ['id' => 13]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-04.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-02.png') }}" alt="product">
                                         </a>
@@ -566,7 +566,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="{{ route('pricing', ['id' => 14]) }}">Carte de visite</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">Carte de visite</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-old">90.00$</span>
@@ -580,7 +580,7 @@
                                 <div class="product-single">
                                     <div class="product-thumb">
                                         <span class="product-badge product-badge-off">10% off</span>
-                                        <a href="{{ route('pricing', ['id' => 15]) }}" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-07.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-10.png') }}" alt="product">
                                         </a>
@@ -592,7 +592,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="shop-details.html">T-shirts hommes</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirts hommes</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-old">90.00$</span>
@@ -606,7 +606,7 @@
                                 <div class="product-single">
                                     <div class="product-thumb">
                                         <span class="product-badge product-badge-off">10% off</span>
-                                        <a href="shop-details.html" class="image">
+                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
                                             <img class="pic-1" src="{{ asset('assets/img/product/product-12.png') }}" alt="product">
                                             <img class="pic-2" src="{{ asset('assets/img/product/product-06.png') }}" alt="product">
                                         </a>
@@ -618,7 +618,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h4 class="product-name">
-                                            <a href="shop-details.html">T-shirts noirs</a>
+                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirts noirs</a>
                                         </h4>
                                         <div class="product-price">
                                             <span class="price-old">100.00$</span>
