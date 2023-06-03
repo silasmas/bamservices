@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="form-check">
-                                                <input id="aggree" type="checkbox" class="form-check-input">
+                                                <input type="checkbox" id="aggree" class="form-check-input">
                                                 <label for="aggree" role="button" class="form-check-label">J'accepte les conditions et la politique de confidentialité</label>
                                             </div>
                                         </div>
