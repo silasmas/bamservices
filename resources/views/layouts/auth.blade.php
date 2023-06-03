@@ -29,20 +29,11 @@
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
         <title>
-@if (Route::is('home'))
-            BAM Services
+@if (Route::is('login'))
+            Se connecter
 @endif
-@if (Route::is('about'))
-            A propos
-@endif
-@if (Route::is('service') || Route::is('service.datas'))
-            Nos services
-@endif
-@if (Route::is('pricing'))
-            Nos produits
-@endif
-@if (Route::is('contact'))
-            Nous contacter
+@if (Route::is('register'))
+            Inscription
 @endif
         </title>
     </head>
@@ -82,218 +73,13 @@
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"><span>Drag</span></div>
 
-        <!-- header area start  -->
-        <header>
-            <div class="cp-header2">
-                <div class="cp-header2-top cp-bg-12 d-none d-md-block">
-                    <div class="container-fluid">
-                        <div class="cp-header2-top-wrap d-flex align-items-center justify-content-between">
-                            <div class="cp-header2-top-item">
-                                <div class="cp-header2-info">
-                                    <ul>
-                                        <li><a href="tel:+8801236985"><i class="far fa-phone-alt"></i> +88 0123 6985</a></li>
-                                        <li><a href="mailto:example@gmail.com"><i class="far fa-envelope"></i> example@gmail.com</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="cp-header2-top-item">
-                                <div class="cp-header2-order-currency d-flex align-items-center">
-                                    <div class="cp-header-lang">
-                                        <div class="header__lang p-relative">
-                                            <a href="#"><span class="header__lang-selected-lang cp-lang-toggle" id="cp-header-lang-toggle">Français</span></a>
-                                            <ul class="header__lang-list cp-lang-list">
-                                                <li><a href="#">Français</a></li>
-                                                <li><a href="#">English</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="menu-show-hide" class="cp-header2-bottom mobile-space cp-bg-13">
-                    <div class="container-fluid">
-                        <div class="cp-header2-bottom-wrap">
-                            <div class="cp-header2-bottom-item">
-                                <div class="logo">
-                                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo-black.png') }}" alt="logo" width="80"></a>
-                                </div>
-                            </div>
-
-                            <div class="cp-header2-bottom-item">
-                                <div class="main-menu main-menu1 t-center">
-                                    <nav id="mobile-menu">
-                                        <ul>
-                                            <li><a href="{{ route('home') }}">Accueil</a></li>
-                                            <li><a href="{{ route('about') }}">A propos</a></li>
-                                            <li><a href="{{ route('service') }}">Services</a></li>
-                                            <li><a href="{{ route('pricing') }}">Catalogue</a></li>
-                                            <li><a href="{{ route('contact') }}">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="cp-header-btn d-md-flex align-items-center justify-content-end mt-md-2">
-                                <div class="cp-header2-action d-none d-md-inline-block me-4">
-                                    <a class="cp-btn" href="{{ route('pricing') }}">
-                                        Commander
-                                        <span class="cp-btn__inner">
-                                            <span class="cp-btn__blobs">
-                                                <span class="cp-btn__blob"></span>
-                                                <span class="cp-btn__blob"></span>
-                                                <span class="cp-btn__blob"></span>
-                                                <span class="cp-btn__blob"></span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="cp-header2-action d-inline-flex align-items-center justify-content-end">
-                                    <div class="d-none d-md-block">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="cp-search-btn"><i class="fas fa-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="cp-header-toggle-btn ms-4 mt-0 d-xl-none">
-                                        <div class="menu-bar">
-                                            <a class="side-toggle" href="javascript:void(0)">
-                                                <div class="bar-icon">
-                                                    <span></span>
-                                                    <span></span>
-                                                    <span></span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header area end -->
-
-        <!-- side toggle start -->
-        <div class="fix">
-            <div class="side-info">
-                <div class="side-info-content">
-                    <div class="offset-widget offset-logo mb-50">
-                        <div class="row align-items-center">
-                            <div class="col-9">
-                                <a href="{{ route('home') }}">
-                                    <img src="{{ asset('assets/img/logo/logo-black.png') }}" alt="Logo" width="100">
-                                </a>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="side-info-close"><i class="fal fa-times"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mobile-menu fix"></div>
-                    <div class="offset-widget offset-support mb-30">
-                        <h3 class="cp-offset-widget-title">Contact Info</h3>
-                        <div class="footer-support">
-                            <div class="irc-item support-meta">
-                                <div class="irc-item-icon">
-                                    <i class="fal fa-phone-alt"></i>
-                                </div>
-                                <div class="irc-item-content">
-                                    <p>Appelez maintenant</p>
-                                    <div class="support-number">
-                                        <a href="tel:98965963168">989 659 631 68</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="irc-item support-meta">
-                                <div class="irc-item-icon">
-                                    <i class="fal fa-envelope"></i>
-                                </div>
-                                <div class="irc-item-content">
-                                    <p>E-mail</p>
-                                    <div class="support-number">
-                                        <a href="mailto:example@gmail.com">example@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="irc-item support-meta">
-                                <div class="irc-item-icon">
-                                    <i class="fal fa-map-marker-alt"></i>
-                                </div>
-                                <div class="irc-item-content">
-                                    <p>Adresse</p>
-                                    <div class="support-number">
-                                        <a href="#" target="_blank">1234 Av. Lorem, Q/ Ipsum, Kinshasa/Sitamet</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="offset-widget offset-social mb-30">
-                        <div class="footer-social">
-                            <div class="social-links">
-                                <ul>
-                                    <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a target="_blank" href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a target="_blank" href="#"><i class="fab fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- side toggle end -->
-
-        <!-- search popup start -->
-        <div class="search__popup">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xxl-12">
-                        <div class="search__wrapper">
-                            <div class="search__top d-flex justify-content-end">
-                                <div class="search__close">
-                                    <button type="button" class="search__close-btn search-close-btn">
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"!stroke-linejoin="round" />
-                                            <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="search__form">
-                                <form action="#">
-                                    <div class="search__input">
-                                        <input class="search-input-field" type="text" placeholder="Search Here">
-                                        <button type="submit">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- search popup end -->
-
         <div class="offcanvas-overlay"></div>
         <div class="offcanvas-overlay-white"></div>
 
         <!-- Add your site or application content here -->
         <main>
 
-@yield('guest-content')
+@yield('auth-content')
 
             <!-- floating area start here  -->
             <div class="cp-floating-area d-none d-md-block zi-1100 p-relative ">
