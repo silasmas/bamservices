@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\panier;
-use App\Models\produit;
-use App\Models\commande;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorecommandeRequest;
 use App\Http\Requests\UpdatecommandeRequest;
+use App\Models\commande;
+use App\Models\panier;
+use Illuminate\Support\Facades\Auth;
 
 class CommandeController extends Controller
 {
@@ -19,22 +18,36 @@ class CommandeController extends Controller
         //
     }
 
+    public function deletTpCard($id)
+    {
+
+        $active = panier::where([['id', $id], ['user_id', Auth::user()->id]])->first();
+        if ($active) {
+            $active->delete();
+            return response()->json(['reponse' => true, 'msg' => 'Ce produit est supprimer de votre panier!!']);
+        } else {
+                return response()->json(['reponse' => false, 'msg' => "erreur !!"]);
+        }
+    }
     public function addCard($id)
     {
-       
-        $active=panier::where([['produit_id',$id],['user_id',Auth::user()->id]])->first();
-        if($active){         
-            return response()->json(['reponse' => false,'msg' =>'Ce produit est déjà dans votre Panier!!']);          
-        }else{
-            $rap =panier::create([
-                'produit_id'=>$id,
-                'user_id'=>Auth::user()->id,
-                'qte'=>1
+
+        $active = panier::where([['produit_id', $id], ['user_id', Auth::user()->id]])->first();
+        if ($active) {
+            $active->qte = $active->qte + 1;
+            $active->save();
+            return response()->json(['reponse' => true, 'msg' => 'Ce produit est déjà dans votre Panier, et nous avons ajouter la quantité de 1 !!']);
+        } else {
+            $rap = panier::create([
+                'produit_id' => $id,
+                'user_id' => Auth::user()->id,
+                'qte' => 1,
             ]);
-            if($rap){
-                return response()->json(['reponse' => true,'msg' =>"Produit ajouter dans votre panier avec succès."]);
-            }else{
-                return response()->json(['reponse' => false,'msg' => "erreur !!"]);
+            if ($rap) {
+
+                return response()->json(['reponse' => true, 'msg' => "Produit ajouter dans votre panier avec succès."]);
+            } else {
+                return response()->json(['reponse' => false, 'msg' => "erreur !!"]);
             }
         }
     }

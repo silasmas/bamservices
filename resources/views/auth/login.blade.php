@@ -23,12 +23,12 @@
                                     @csrf
                                     <div class="cp-input-field">
                                         <label for="name" role="button">Adresse e-mail</label>
-                                        <input type="text" required id="name" autofocus>
+                                        <input type="text" required id="name" name="email" autofocus>
                                         <i class="far fa-user"></i>
                                     </div>
                                     <div class="cp-input-field">
                                         <label for="password" role="button">Mot de passe</label>
-                                        <input type="password" required id="password">
+                                        <input type="password" required id="password" name="password">
                                         <i class="far fa-lock-alt"></i>
                                     </div>
                                     <div class="cp-input-field sign-flex checkbox d-flex align-items-center justify-content-between">

@@ -616,6 +616,29 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/sweetalert/sweetalert.min.js') }}"></script>
     <script>
+        function redirecte(route){
+            window.location.href = route;
+        }
+        function deletTpCard(id) {
+            event.preventDefault()
+            swal({
+                            title: "Suppression",
+                            text: "Vous êtes sur le point de supprimer ce produit de votre panier, voulez-vous continuer ?",
+                            icon: 'warning',
+                            dangerMode: true,
+                            buttons: {
+                                cancel: 'Non',
+                                delete: 'OUI'
+                            }
+                        }).then(function(willDelete) {
+                            if (willDelete) {
+                                addCard(id.id, "", "deletTpCard");
+                            } else {
+
+                            }
+                        });
+
+        }
         function addToCard(id) {
             event.preventDefault()
             @if (!Auth::guest())

@@ -1,39 +1,49 @@
 <?php
 
+use App\Models\produit;
 use App\Models\chapitre;
 use App\Models\examenUser;
 use App\Models\formationUser;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use PhpParser\Node\Stmt\Switch_;
 
-use function Pest\Laravel\swap;
-
-if (!function_exists('infoService')) {
-    function infoService($tab)
+if (!function_exists('sumPrix')) {
+    function sumPrix($tab)
     {
-        $total = $tab->pluck("produit.prix");
 
+        // $total = $tab->pluck(["qte","produit.prix"]);
+        // dd($total);
+        //
+        $total = 0;
 
-        return $total->sum();
+    foreach ($tab as $item) {
+        // Récupérer le produit associé à l'élément du panier
+        $produit = produit::find($item->produit_id);
+
+        if ($produit) {
+            // Calculer le total en multipliant la quantité par le prix du produit
+            $total += $item->qte * $produit->prix;
+        }
+
+    }
+    return $total;
     }
 }
 if (!function_exists('titreService')) {
     function titreService($id)
     {
-        switch($id){
+        switch ($id) {
             case (1):
-            return "Imprimerie";
-            break;
+                return "Imprimerie";
+                break;
             case (2):
-            return "Communication";
-            break;
+                return "Communication";
+                break;
             case (3):
-            return "Evénementiel";
-            break;
+                return "Evénementiel";
+                break;
             case (4):
-            return "Ventes";
-            break;
+                return "Ventes";
+                break;
         }
 
     }
@@ -118,8 +128,8 @@ if (!function_exists('lastChapitre')) {
 }
 if (!function_exists('convertTimeToMinutes')) {
     function convertTimeToMinutes($time)
-{
-    $parts = explode(':', $time);
-    return ($parts[0] * 60) + $parts[1];
-}
+    {
+        $parts = explode(':', $time);
+        return ($parts[0] * 60) + $parts[1];
+    }
 }

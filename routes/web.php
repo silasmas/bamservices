@@ -27,6 +27,7 @@ Route::get('/account', 'App\Http\Controllers\Web\AccountController@index')->name
 
 Route::middleware('auth')->group(function () {
     Route::get('addCard/{id}', [CommandeController::class,'addCard'])->name('addCard');
+    Route::get('deletTpCard/{id}',[CommandeController::class,'deletTpCard'])->name('deletTpCard');
     Route::get('/cart', 'App\Http\Controllers\Web\AccountController@cart')->name('cart');
     Route::get('dashboard','App\Http\Controllers\Web\HomeController@index')->name('dashboard');
 
