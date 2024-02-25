@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\produit;
 use Illuminate\Http\Request;
 
 /**
@@ -33,7 +34,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $prod=produit::get();
+        return view('welcome',compact('prod'));
     }
 
     /**

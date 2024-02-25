@@ -57,17 +57,22 @@
                                     <form action="#">
                                         <div class="cp-input-field">
                                             <label for="name">Votre nom (obligatoire)</label>
-                                            <input type="text" required id="name">
+                                            <input type="text" required id="name" required>
                                             <i class="far fa-user"></i>
                                         </div>
                                         <div class="cp-input-field">
+                                            <label for="email">Téléphone (obligatoire)</label>
+                                            <input type="text" required id="phone" required>
+                                            <i class="far fa-phone"></i>
+                                        </div>
+                                        <div class="cp-input-field">
                                             <label for="email">Votre e-mail (obligatoire)</label>
-                                            <input type="text" required id="email">
+                                            <input type="text" required id="email" required>
                                             <i class="far fa-envelope-open"></i>
                                         </div>
                                         <div class="cp-input-field textarea">
                                             <label for="message">Tapez votre message</label>
-                                            <textarea id="message" cols="30" rows="10"></textarea>
+                                            <textarea id="message" cols="30" rows="10" required></textarea>
                                             <i class="far fa-edit"></i>
                                         </div>
                                         <button type="submit" class="cp-border-btn mt-15">

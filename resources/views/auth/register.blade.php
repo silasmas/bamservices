@@ -19,40 +19,41 @@
                             <div class="cp-signin-wrap">
                                 <h3 class="cp-signin-title t-center">Créez votre compte</h3>
 
-                                <form action="#">
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="cp-input-field">
                                                 <label for="name" role="button">Votre nom</label>
-                                                <input type="text" id="name" autofocus>
+                                                <input type="text" name="name" id="name" autofocus>
                                                 <i class="far fa-user"></i>
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="cp-input-field">
                                                 <label for="firstname" role="button">Votre prénom</label>
-                                                <input type="text" id="firstname">
+                                                <input type="text" name="prenom" id="firstname">
                                                 <i class="far fa-user"></i>
                                             </div>
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="cp-input-field">
                                                 <label for="email" role="button">Votre e-mail</label>
-                                                <input type="email" id="email">
+                                                <input type="email" name="email" id="email">
                                                 <i class="far fa-envelope-open"></i>
                                             </div>
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="cp-input-field">
                                                 <label for="password" role="button">Mot de passe</label>
-                                                <input type="password" id="password">
+                                                <input type="password" name="password" id="password">
                                                 <i class="far fa-lock-alt"></i>
                                             </div>
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="cp-input-field">
                                                 <label for="confirm_password" role="button">Confirmer mot de passe</label>
-                                                <input type="password" id="confirm_password">
+                                                <input type="password" name="password_confirmation" id="confirm_password">
                                                 <i class="far fa-lock-alt"></i>
                                             </div>
                                         </div>

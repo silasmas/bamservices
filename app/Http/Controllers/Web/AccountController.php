@@ -13,7 +13,7 @@ class AccountController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     // ==================================== HTTP GET METHODS ====================================
@@ -34,6 +34,8 @@ class AccountController extends Controller
      */
     public function cart()
     {
+        session()->forget('cart');
+        // dd(session()->get("cart"));
         return view('account');
     }
 
@@ -46,6 +48,6 @@ class AccountController extends Controller
      */
     public function updatePassword(Request $request)
     {
-        // 
+        //
     }
 }

@@ -24,7 +24,7 @@
             <!-- services area start here  -->
             <section class="cp-services-area pb-85 p-relative z-index-1 mt--140 mt-3 py-5">
                 <div class="cp-services-bottom-img p-absolute m-img cp-bg-move-x d-none d-xl-block">
-                    <img src="{{ asset('assets/img/service/services-7.png') }}" alt="img not found">
+                    <img src="{{ asset('assets/img/service/s7.png') }}" alt="img not found">
                 </div>
                 <div class="container">
                     <div class="row align-items-end">
@@ -35,16 +35,53 @@
                                 <p class="mb-50">
                                     BAM Services, une entreprise de communications graphiques axée sur les solutions, qui a réussi à connecter les marques aux consommateurs.
                                 </p>
+
+                                <div class="cp-services-btn lh-1">
+                                    <a class="cp-btn" href="{{ route('service') }}">
+                                        Voir Tous les Services
+                                        <span class="cp-btn__inner">
+                                            <span class="cp-btn__blobs">
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-xl-6 col-lg-10 d-none d-xl-block">
+                            <div class="cp-services-title-wrap space cp-section-title mb-30 ml-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay="0.9s">
+                                <span class="cp-subtitle mb-15">Nos Principaux Services</span>
+                                <h2 class="cp-title mb-25"><span>Solutions d'impression</span> personnalisées à guichet unique</h2>
+                                <p class="mb-50">
+                                    Nous vous offrons un service personnalisé, adapté à vos besoins. Nous sommes conscient des exigences et de la compétitive professionnelle liées au délais, c'est pourquoi nous vous offrons un service rapide lors de l'exécution de vos projets.
+                                    BAM c'est aussi de la créativité, de l'originalité dans la création graphique de chaque design.
+                                </p>
 
+                                <div class="cp-services-btn lh-1">
+                                    <a class="cp-btn" href="{{ route('service') }}">
+                                        Voir Tous les Services
+                                        <span class="cp-btn__inner">
+                                            <span class="cp-btn__blobs">
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                                <span class="cp-btn__blob"></span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay=".3s">
                                 <span class="cp-services-num">01</span>
                                 <div class="cp-services-img w-img">
-                                    <img src="{{ asset('assets/img/service/services-1.jpg') }}" alt="img not found">
+                                    <img src="{{ asset('assets/img/service/s1.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 1]) }}">Cartes de vœux</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 1]) }}">Imprimerie</a></h4>
                             </div>
                         </div>
 
@@ -52,9 +89,9 @@
                             <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay=".4s">
                                 <span class="cp-services-num">02</span>
                                 <div class="cp-services-img w-img">
-                                    <img src="{{ asset('assets/img/service/services-2.jpg') }}" alt="img not found">
+                                    <img src="{{ asset('assets/img/service/s2.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 2]) }}">Impression t-shirt</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 2]) }}">Communication</a></h4>
                             </div>
                         </div>
 
@@ -62,9 +99,9 @@
                             <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay=".5s">
                                 <span class="cp-services-num">03</span>
                                 <div class="cp-services-img w-img">
-                                    <img src="{{ asset('assets/img/service/services-3.jpg') }}" alt="img not found">
+                                    <img src="{{ asset('assets/img/service/s4.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 3]) }}">Autocollants et étiquettes</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 3]) }}">Evénementiel</a></h4>
                             </div>
                         </div>
 
@@ -72,13 +109,13 @@
                             <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay=".6s">
                                 <span class="cp-services-num">04</span>
                                 <div class="cp-services-img w-img">
-                                    <img src="{{ asset('assets/img/service/services-4.jpg') }}" alt="img not found">
+                                    <img src="{{ asset('assets/img/service/s3.jpg') }}" alt="img not found">
                                 </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 4]) }}">Conception cartes de visite</a></h4>
+                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 4]) }}">Ventes</a></h4>
                             </div>
                         </div>
 
-                        <div class="col-xl-3 col-lg-4 col-md-6">
+                        {{-- <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay="0.7">
                                 <span class="cp-services-num">05</span>
                                 <div class="cp-services-img w-img">
@@ -96,17 +133,9 @@
                                 </div>
                                 <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 6]) }}">Conception cartes de bannière</a></h4>
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-xl-6 col-lg-10 d-none d-xl-block">
-                            <div class="cp-services-title-wrap space cp-section-title mb-30 ml-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay="0.9s">
-                                <span class="cp-subtitle mb-15">Nos Principaux Services</span>
-                                <h2 class="cp-title mb-25"><span>Solutions d'impression</span> personnalisées à guichet unique</h2>
-                                <p class="mb-50">
-                                    BAM Services, une entreprise de communications graphiques axée sur les solutions, qui a réussi à connecter les marques aux consommateurs.
-                                </p>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>

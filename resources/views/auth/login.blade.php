@@ -19,7 +19,8 @@
                             <div class="cp-signin-wrap">
                                 <h3 class="cp-signin-title t-center">Connectez-vous à votre compte</h3>
 
-                                <form action="#">
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="cp-input-field">
                                         <label for="name" role="button">Adresse e-mail</label>
                                         <input type="text" required id="name" autofocus>
