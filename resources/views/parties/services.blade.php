@@ -60,19 +60,6 @@
                                     BAM c'est aussi de la créativité, de l'originalité dans la création graphique de chaque design.
                                 </p>
 
-                                <div class="cp-services-btn lh-1">
-                                    <a class="cp-btn" href="{{ route('service') }}">
-                                        Voir Tous les Services
-                                        <span class="cp-btn__inner">
-                                            <span class="cp-btn__blobs">
-                                                <span class="cp-btn__blob"></span>
-                                                <span class="cp-btn__blob"></span>
-                                                <span class="cp-btn__blob"></span>
-                                                <span class="cp-btn__blob"></span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6">
@@ -114,28 +101,6 @@
                                 <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 4]) }}">Ventes</a></h4>
                             </div>
                         </div>
-
-                        {{-- <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay="0.7">
-                                <span class="cp-services-num">05</span>
-                                <div class="cp-services-img w-img">
-                                    <img src="{{ asset('assets/img/service/services-5.jpg') }}" alt="img not found">
-                                </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 5]) }}">Conception stationnaire</a></h4>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="cp-services-item t-center mb-30 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                                <span class="cp-services-num">06</span>
-                                <div class="cp-services-img w-img">
-                                    <img src="{{ asset('assets/img/service/services-6.jpg') }}" alt="img not found">
-                                </div>
-                                <h4 class="cp-services-title"><a href="{{ route('service.datas', ['id' => 6]) }}">Conception cartes de bannière</a></h4>
-                            </div>
-                        </div> --}}
-
-
                     </div>
                 </div>
             </section>
