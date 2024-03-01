@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\panier;
+use App\Models\produit;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -23,9 +24,11 @@ class ViewServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
+            $categorie = produit::select('categorie')->distinct()->get();;
+            $view->with('categorie', $categorie);
             if (!Auth::guest()) {
 
-                $panier=panier::with("produit","user")->where("user_id",Auth::user()->id)->get();
+                $panier = panier::with("produit", "user")->where("user_id", Auth::user()->id)->get();
                 // dd($panier->pluck("prix"));
                 $view->with('panier', $panier);
             }
