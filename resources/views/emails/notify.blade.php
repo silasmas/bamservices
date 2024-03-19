@@ -6,9 +6,9 @@ Vous avez une nouvel commance provenant du site.
 Merci de vous connectez comme administrateur pour le voir.
 @endcomponent
 @component('mail::table')
-| NOM           | PRIX          | QUANTITE  |
-| ------------- |:-------------:| --------:|
-|{{ $cmd->produit->nom }} | {{ $cmd->produit->prix." ".$cmd->produit->monaie }}| {{ $cmd->qte }}|
+| NOM           | PRIX          | QUANTITE | CODE |
+| ------------- |:-------------:| --------:|---------:|
+|{{ $cmd->produit->nom }} | {{ $cmd->produit->prix." ".$cmd->produit->monaie }}| {{ $cmd->qte }}|{{ $cmd->code }}|
 
 @endcomponent
 {{-- @component('mail::panel')
