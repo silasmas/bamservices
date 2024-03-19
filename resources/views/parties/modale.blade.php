@@ -78,7 +78,7 @@
                                         <span>SKU :</span>
                                         <span>Juicera C49J89: £875, Debenhams Plus</span>
                                     </div>
-                                    <div class="product__review d-sm-flex">
+                                    {{-- <div class="product__review d-sm-flex">
                                         <div class="rating rating__shop mb-15">
                                             <ul>
                                                 <li>
@@ -101,14 +101,14 @@
                                         <div class="product__add-review mb-15">
                                             <span><a href="{{ route('contact') }}">1 commentaire</a></span>
                                             <span><a href="{{ route('contact') }}">Ajouter un commentaire</a></span>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="product__price">
-                                        <span>$59.00</span>
+                                        <span> {{  $p->prix." ".$p->monaie }}</span>
                                     </div>
                                     <div class="product__modal-form">
                                         <div class="product-quantity-cart mb-30">
-                                            <div class="product-quantity-form">
+                                            {{-- <div class="product-quantity-form">
                                                 <form action="#">
                                                     <button class="cart-minus">
                                                         <i class="far fa-minus"></i>
@@ -118,8 +118,8 @@
                                                         <i class="far fa-plus"></i>
                                                     </button>
                                                 </form>
-                                            </div>
-                                            <a href="{{ route('cart') }}" class="cp-border-btn">
+                                            </div> --}}
+                                            <a id="{{ $p->id }}" onclick="addToCard(this)"class="cp-border-btn">
                                                 Ajouter au panier
                                                 <span class="cp-border-btn__inner">
                                                     <span class="cp-border-btn__blobs">
@@ -132,22 +132,22 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="product__modal-links">
-                                        <ul>
-                                            <li>
-                                                <a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="Print"><i class="fal fa-print"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="Share"><i class="fal fa-share-alt"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        {{-- <div class="product__modal-links">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" title="Print"><i class="fal fa-print"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" title="Share"><i class="fal fa-share-alt"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div> --}}
                                 </div>
                             </div>
                         </div>

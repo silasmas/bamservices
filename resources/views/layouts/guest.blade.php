@@ -662,7 +662,61 @@
                         });
             @endif
     }
+        function addNbrCard(id,type) {
+            event.preventDefault()
+            @if (!Auth::guest())
+                 addCardnbr(id.id, type, "addCardnbr");
+            @else
+                        swal({
+                            title: "Besoin d'authentification",
+                            text: "Vous devez vous connecter afin de placer les produit dans le panier!",
+                            icon: 'warning',
+                            dangerMode: true,
+                            buttons: {
+                                cancel: 'Non',
+                                delete: 'OUI'
+                            }
+                        }).then(function(willDelete) {
+                            if (willDelete) {
+                                 window.location.href = "login";
+                            } else {
 
+                            }
+                        });
+            @endif
+    }
+
+    function addCardnbr(form, type, url) {
+        event.preventDefault()
+        // var autre = type == '' ? '' : '../';
+        swal({
+            title: 'Merci de patienter...',
+            icon: 'info'
+        })
+        $.ajax({
+            url: '../' + url + '/' + form+'&type='+type,
+            method: "GET",
+            data: {
+                "idform": form,
+                "type": type
+            },
+            success: function(data) {
+                if (!data.reponse) {
+                    swal({
+                        title: data.msg,
+                        icon: 'error'
+                    })
+                } else {
+                    swal({
+                        title: data.msg,
+                        icon: 'success'
+                    })
+                    actualiser();
+                }
+            },
+        });
+
+    }
     function addCard(form, idLoad, url) {
         event.preventDefault()
         var autre = idLoad == '' ? '' : '../';

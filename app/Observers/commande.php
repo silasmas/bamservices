@@ -2,7 +2,10 @@
 
 namespace App\Observers;
 
+use App\Models\User;
+use App\Mail\notification;
 use App\Models\commande as cmd;
+use Illuminate\Support\Facades\Mail;
 
 class commande
 {
@@ -11,7 +14,12 @@ class commande
      */
     public function created(cmd $commande): void
     {
-        //
+        $user = User::where("role","admin")->get();
+        if ($user) {
+            foreach ($user as $u) {
+                Mail::to($u->email)->send(new notification($u,$commande));
+            }
+        }
     }
 
     /**

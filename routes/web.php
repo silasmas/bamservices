@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-*/
+ */
 // Home
 Route::get('/', 'App\Http\Controllers\Web\HomeController@index')->name('home');
 Route::get('/about', 'App\Http\Controllers\Web\HomeController@about')->name('about');
@@ -26,11 +26,13 @@ Route::get('/language/{locale}', 'App\Http\Controllers\Web\HomeController@change
 Route::get('/account', 'App\Http\Controllers\Web\AccountController@index')->name('account');
 
 Route::middleware('auth')->group(function () {
-    Route::get('addCard/{id}', [CommandeController::class,'addCard'])->name('addCard');
-    Route::get('deletTpCard/{id}',[CommandeController::class,'deletTpCard'])->name('deletTpCard');
+    Route::get('addCardnbr/{id}', [CommandeController::class, 'addCardnbr'])->name('addCardnbr');
+    Route::get('commander', [CommandeController::class, 'store'])->name('commander');
+    Route::get('addCard/{id}', [CommandeController::class, 'addCard'])->name('addCard');
+    Route::get('deletTpCard/{id}', [CommandeController::class, 'deletTpCard'])->name('deletTpCard');
     Route::get('/cart', 'App\Http\Controllers\Web\AccountController@cart')->name('cart');
-    Route::get('dashboard','App\Http\Controllers\Web\HomeController@index')->name('dashboard');
+    Route::get('dashboard', 'App\Http\Controllers\Web\HomeController@index')->name('dashboard');
 
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

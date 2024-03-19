@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('produit_id')->constrained()->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('qte')->nullable();
+            $table->string('code')->nullable();
             $table->string('etat')->default('en attente');
             $table->string('visible')->default("1");
             $table->timestamps();
