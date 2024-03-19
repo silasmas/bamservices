@@ -5,24 +5,17 @@
 Vous avez une nouvel commance provenant du site.
 Merci de vous connectez comme administrateur pour le voir.
 @endcomponent
-@component('mail::panel')
-<table class="table">
-    <thead>
+@component('mail::table')
+| NOM           | PRIX          | QUANTITE  |
+| ------------- |:-------------:| --------:|
+|{{ $cmd->produit->nom }} | {{ $cmd->produit->prix." ".$cmd->produit->monaie }}| {{ $cmd->produit->qte }}|
+
+@endcomponent
+{{-- @component('mail::panel')
+
+        @forelse ($cmd as $pt)
         <tr>
-            <th class="cp-cart-product-name">Nom du produit</th>
-            <th class="cp-cart-product-quantity">Quantité</th>
-            <th class="cp-cart-product-price">Prix unitaire</th>
-            <th class="cp-cart-product-total">Prix total</th>
-            <th class="cp-cart-product-total">Option</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{-- @forelse ($cmd as $pt) --}}
-        <tr>
-            <td>
-                <a href=""><img src="{{ asset('assets/img/product/'.$cmd->produit->img2) }}"
-                        alt="product">{{$cmd->produit->nom }}</a>
-            </td>
+
 
             <td class="product-quantity text-center">
                 <div class="product-quantity mt-10 mb-10">
@@ -49,19 +42,8 @@ Merci de vous connectez comme administrateur pour le voir.
                     <i class="far fa-trash-alt" alt="Rétirer du panier"></i></a>
             </td>
         </tr>
-        {{-- @empty
-        <tr>
 
-            <a href="{{ route('home') }}" class="cp-btn"
-                style="background: red;margin-bottom: 10px;">Retourner vers l'accueil</a>
-
-        </tr>
-
-        @endforelse --}}
-
-    </tbody>
-</table>
-@endcomponent
+@endcomponent --}}
 
 @component('mail::button', ['url' => config('app.url')])
 Aller sur la partie admin
