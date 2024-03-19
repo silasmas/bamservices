@@ -8,7 +8,7 @@ Merci de vous connectez comme administrateur pour le voir.
 @component('mail::table')
 | NOM           | PRIX          | QUANTITE  |
 | ------------- |:-------------:| --------:|
-|{{ $cmd->produit->nom }} | {{ $cmd->produit->prix." ".$cmd->produit->monaie }}| {{ $cmd->produit->qte }}|
+|{{ $cmd->produit->nom }} | {{ $cmd->produit->prix." ".$cmd->produit->monaie }}| {{ $cmd->qte }}|
 
 @endcomponent
 {{-- @component('mail::panel')
