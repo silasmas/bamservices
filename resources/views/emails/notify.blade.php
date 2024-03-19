@@ -6,7 +6,7 @@ Vous avez une nouvel commance provenant du site.
 Merci de vous connectez comme administrateur pour le voir.
 @endcomponent
 @component('mail::panel')
-{{-- <table class="table">
+<table class="table">
     <thead>
         <tr>
             <th class="cp-cart-product-name">Nom du produit</th>
@@ -60,7 +60,7 @@ Merci de vous connectez comme administrateur pour le voir.
         @endforelse
 
     </tbody>
-</table> --}}
+</table>
 @endcomponent
 
 @component('mail::button', ['url' => config('app.url')])

@@ -7,21 +7,22 @@ use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class notification extends Mailable
 {
     use Queueable, SerializesModels;
 
     public User $user;
+    public Commande $cmd;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user,commande $commande)
+    public function __construct(User $user, commande $commande)
     {
         $this->user = $user;
+        $this->cmd = $commande;
     }
 
     /**
