@@ -17,39 +17,39 @@ Merci de vous connectez comme administrateur pour le voir.
         </tr>
     </thead>
     <tbody>
-        @forelse ($cmd as $pt)
+        {{-- @forelse ($cmd as $pt) --}}
         <tr>
             <td>
-                <a href=""><img src="{{ asset('assets/img/product/'.$pt->produit->img2) }}"
-                        alt="product">{{$pt->produit->nom }}</a>
+                <a href=""><img src="{{ asset('assets/img/product/'.$cmd->produit->img2) }}"
+                        alt="product">{{$cmd->produit->nom }}</a>
             </td>
 
             <td class="product-quantity text-center">
                 <div class="product-quantity mt-10 mb-10">
                     <div class="product-quantity-form cp-cart-quantity">
                         <form action="#">
-                            @if ($pt->qte>1)
-                            <button class="cart-minus" id="{{ $pt->produit->id }}"
+                            @if ($cmd->qte>1)
+                            <button class="cart-minus" id="{{ $cmd->produit->id }}"
                                 onclick="addNbrCard(this,'moins')">
                                 <i class="far fa-minus"></i></button>
                             @endif
-                            <input class="cart-input" type="text" value="{{ $pt->qte }}">
-                            <button class="cart-plus" id="{{ $pt->produit->id }}"
+                            <input class="cart-input" type="text" value="{{ $cmd->qte }}">
+                            <button class="cart-plus" id="{{ $cmd->produit->id }}"
                                 onclick="addNbrCard(this,'plus')"><i
                                     class="far fa-plus"></i></button>
                         </form>
                     </div>
                 </div>
             </td>
-            <td>{{ $pt->produit->prix." ".$pt->produit->monaie }}</td>
-            <td>{{$pt->produit->prix*$pt->qte." ".$pt->produit->monaie}}</td>
+            <td>{{ $cmd->produit->prix." ".$cmd->produit->monaie }}</td>
+            <td>{{$cmd->produit->prix*$cmd->qte." ".$cmd->produit->monaie}}</td>
             <td>
-                <a href="#" alt="Rétirer du panier" id="{{ $pt->id }}"
+                <a href="#" alt="Rétirer du panier" id="{{ $cmd->id }}"
                     onclick="deletTpCard(this)">
                     <i class="far fa-trash-alt" alt="Rétirer du panier"></i></a>
             </td>
         </tr>
-        @empty
+        {{-- @empty
         <tr>
 
             <a href="{{ route('home') }}" class="cp-btn"
@@ -57,7 +57,7 @@ Merci de vous connectez comme administrateur pour le voir.
 
         </tr>
 
-        @endforelse
+        @endforelse --}}
 
     </tbody>
 </table>
