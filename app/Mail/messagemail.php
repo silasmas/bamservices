@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -15,14 +14,19 @@ class messagemail extends Mailable
 
     public $email;
     public $objet = "";
+    public $nom = "";
+    public $message = "";
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($email, $objet)
+    public function __construct($email,$nom, $objet, $msg)
     {
-        //
+        $this->email = $email;
+        $this->objet = $objet;
+        $this->nom = $nom;
+        $this->message = $msg;
     }
 
     /**
@@ -31,7 +35,7 @@ class messagemail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Messagemail',
+            subject: $this->objet,
         );
     }
 

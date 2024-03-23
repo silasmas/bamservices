@@ -4,6 +4,8 @@ namespace App\Observers;
 
 use App\Mail\messagemail;
 use App\Models\message as msg;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class message
 {
@@ -12,7 +14,13 @@ class message
      */
     public function created(msg $message): void
     {
-        Mail::to($message->email)->send(new messagemail($message->email, "Crétaion des accès chez groupe synapse"));
+        $user = User::where("role", "admin")->get();
+        if ($user) {
+            foreach ($user as $u) {
+                Mail::to($u->email)->send(new messagemail($message->email,$u->name, "Alerte message reçu", "Vous avez reçu un message provenant d'un visiteur du site BAM SERVICE"));
+            }
+        }
+        Mail::to($message->email)->send(new messagemail($message->email,$message->nom, "Confirmation du message envoyer", "Votre message à été bien envoyer à BAM SERVICE"));
     }
 
     /**

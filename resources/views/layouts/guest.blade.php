@@ -429,24 +429,31 @@
                             <div class="cp-floating-left cp-signup-popup">
                                 <h3 class="cp-floating-title">Avez-vous une question?</h3>
                                 <div class="cp-floating-form">
-                                    <form action="#">
+                                    <form action="#" id="formMessage">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="cp-input-field">
                                                     <label for="name">Votre nom</label>
-                                                    <input type="text" id="name">
+                                                    <input type="text" name="name" id="name">
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="cp-input-field">
                                                     <label for="email">Votre E-mail</label>
-                                                    <input type="email" id="email">
+                                                    <input type="email" name="email" id="email">
                                                 </div>
                                             </div>
+                                            {{-- <div class="col-xl-12">
+                                                <div class="cp-input-field">
+                                                    <label for="phone">Votre Téléphone</label>
+                                                    <input type="text" name="phone" id="phone">
+                                                </div>
+                                            </div> --}}
                                             <div class="col-xl-12">
                                                 <div class="cp-input-field">
                                                     <label for="message">Votre question</label>
-                                                    <textarea id="message" cols="30" rows="10"></textarea>
+                                                    <textarea id="message" name="message" cols="30" rows="10"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -685,7 +692,39 @@
                         });
             @endif
     }
+    $("#formMessage").on("submit", function (e) {
+            e.preventDefault();
+            sendMsg("#formMessage", "sendMessage")
+        });
 
+    function sendMsg(form, url) {
+        event.preventDefault()
+        // var autre = type == '' ? '' : '../';
+        swal({
+            title: 'Merci de patienter...',
+            icon: 'info'
+        })
+        $.ajax({
+            url: '../' + url,
+            method: "POST",
+            data:$(form).serialize(),
+            success: function(data) {
+                if (!data.reponse) {
+                    swal({
+                        title: data.msg,
+                        icon: 'error'
+                    })
+                } else {
+                    swal({
+                        title: data.msg,
+                        icon: 'success'
+                    })
+                    actualiser();
+                }
+            },
+        });
+
+    }
     function addCardnbr(form, type, url) {
         event.preventDefault()
         // var autre = type == '' ? '' : '../';

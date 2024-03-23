@@ -4,8 +4,9 @@
  * @see https://www.linkedin.com/in/xanders-samoth-b2770737/
  */
 
-use App\Http\Controllers\CommandeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\CommandeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('/contact', 'App\Http\Controllers\Web\HomeController@contact')->name(
 Route::get('/symlink', function () {return view('symlink');})->name('generate_symlink'); // Generate symbolic link
 Route::get('/language/{locale}', 'App\Http\Controllers\Web\HomeController@changeLanguage')->name('change_language'); // Change language
 
+Route::post('sendMessage', [MessageController::class, 'store'])->name('sendMessage');
 // Account
 Route::get('/account', 'App\Http\Controllers\Web\AccountController@index')->name('account');
 
