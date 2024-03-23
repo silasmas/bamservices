@@ -58,4 +58,8 @@ class messagemail extends Mailable
     {
         return [];
     }
+    public function build()
+    {
+        return $this->markdown('emails.msg')->subject($this->objet);
+    }
 }
