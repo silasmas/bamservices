@@ -25,9 +25,6 @@
                         <div class="col-xl-10">
                             <div class="cp-product-menu mb-60 t-left">
                                 <button class="active" data-filter="*">Tout</button>
-                                {{-- <button data-filter=".c1">T-Shirt</button>
-                                <button data-filter=".c2">T-Shirt Homme</button>
-                                <button data-filter=".c3">T-Shirt Femme</button> --}}
                                 @forelse ($categorie as $cat)
                                 <button data-filter="{{ ".".$cat->categorie }}">{{ $cat->categorie }}</button>
                                 @empty
