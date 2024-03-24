@@ -1,5 +1,5 @@
 
-{!! banniereMenu("Nos services", "Détails du service ".titreService(request('id')), route('service')) !!}
+{!! banniereMenu("Nos services", "Détails ".titreService(request('id')), route('service')) !!}
 
 <!-- service area start here  -->
 <section class="cp-news-details-area white-bg pt-150 pb-90">
