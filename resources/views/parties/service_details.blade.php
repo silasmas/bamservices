@@ -1,26 +1,5 @@
-<!-- page title area start  -->
-<section class="page-title-area breadcrumb-spacing cp-bg-14">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xxl-9">
-                <div class="page-title-wrapper t-center">
-                    <h3 class="page-title mb-10">{{ titreService(request('id')) }}</h3>
-                    <div class="breadcrumb-menu d-flex justify-content-center">
-                        <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-                            <ul class="trail-items">
-                                <li class="trail-item trail-begin"><a
-                                        href="{{ route('home') }}"><span>Accueil</span></a></li>
-                                <li class="trail-item trail-end"><span>Détails du service {{ titreService(request('id')) }}</span>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- page title area end  -->
+
+{!! banniereMenu("Nos services", "Détails du service ".titreService(request('id')), route('service')) !!}
 
 <!-- service area start here  -->
 <section class="cp-news-details-area white-bg pt-150 pb-90">

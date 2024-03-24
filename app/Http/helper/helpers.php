@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\produit;
 use App\Models\chapitre;
 use App\Models\examenUser;
 use App\Models\formationUser;
+use App\Models\produit;
 use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('sumPrix')) {
@@ -15,21 +15,22 @@ if (!function_exists('sumPrix')) {
         //
         $total = 0;
 
-    foreach ($tab as $item) {
-        // Récupérer le produit associé à l'élément du panier
-        $produit = produit::find($item->produit_id);
+        foreach ($tab as $item) {
+            // Récupérer le produit associé à l'élément du panier
+            $produit = produit::find($item->produit_id);
 
-        if ($produit) {
-            // Calculer le total en multipliant la quantité par le prix du produit
-            $total += $item->qte * $produit->prix;
+            if ($produit) {
+                // Calculer le total en multipliant la quantité par le prix du produit
+                $total += $item->qte * $produit->prix;
+            }
+
         }
-
-    }
-    return $total;
+        return $total;
     }
 }
 if (!function_exists('generateUniqueCode')) {
-    function generateUniqueCode($length = 8) {
+    function generateUniqueCode($length = 8)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $code = '';
 
@@ -37,7 +38,35 @@ if (!function_exists('generateUniqueCode')) {
             $code .= $characters[rand(0, strlen($characters) - 1)];
         }
 
-        return "BAM-".$code;
+        return "BAM-" . $code;
+    }
+
+}
+if (!function_exists('banniereMenu')) {
+    function banniereMenu($back, $page, $url)
+    {
+        $banniere = '<section class="page-title-area breadcrumb-spacing cp-bg-14">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-9">
+                    <div class="page-title-wrapper t-center">
+                        <h3 class="page-title mb-10">' . $page . '</h3>
+                        <div class="breadcrumb-menu d-flex justify-content-center">
+                            <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
+                                <ul class="trail-items">
+                                    <li class="trail-item trail-begin"><a
+                                            href="'.$url.'"><span>' . $back . '</span></a>
+                                    </li>
+                                    <li class="trail-item trail-end"><span>' . $page . '</span></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>';
+        return $banniere;
     }
 
 }

@@ -2,27 +2,8 @@
 
 @section('guest-content')
 
-            <!-- page title area start  -->
-            <section class="page-title-area breadcrumb-spacing cp-bg-14">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xxl-9">
-                            <div class="page-title-wrapper t-center">
-                                <h3 class="page-title mb-10">Nos produits</h3>
-                                <div class="breadcrumb-menu d-flex justify-content-center">
-                                    <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-                                        <ul class="trail-items">
-                                            <li class="trail-item trail-begin"><a href="{{ route('home') }}"><span>Accueil</span></a></li>
-                                            <li class="trail-item trail-end"><span>Catalogue</span></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- page title area end  -->
+            {!! banniereMenu("Accueil", "Catalogue", route('home')) !!}
+
 
             <!-- product area start  -->
             <div class="product-area pt-50">
@@ -44,217 +25,49 @@
                         <div class="col-xl-10">
                             <div class="cp-product-menu mb-60 t-left">
                                 <button class="active" data-filter="*">Tout</button>
-                                <button data-filter=".c1">T-Shirt</button>
+                                {{-- <button data-filter=".c1">T-Shirt</button>
                                 <button data-filter=".c2">T-Shirt Homme</button>
-                                <button data-filter=".c3">T-Shirt Femme</button>
+                                <button data-filter=".c3">T-Shirt Femme</button> --}}
+                                @forelse ($categorie as $cat)
+                                <button data-filter="{{ ".".$cat->categorie }}">{{ $cat->categorie }}</button>
+                                @empty
+
+                                @endforelse
                             </div>
                         </div>
                     </div>
 
                     <div class="cp-product-wrap mb-20 wow fadeInUp animated" data-wow-duration="1.5s" data-wow-delay="0.5s">
                         <div class="row grid">
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c1 c2 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-01.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-11.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirts & débardeurs</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-old">139.00$</span>
-                                            <span class="price-now">100.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @forelse ($prod as $p)
+                            <div class="col-xl-3 col-lg-4 col-sm-6 {{ $p->categorie }} grid-item">
+                             <div class="product-single">
+                                 <div class="product-thumb">
+                                     <a href="{{ asset('assets/img/product/'.$p->img1) }}" data-bs-toggle="modal" data-bs-target="{{"#produit".$p->id}}" class="image">
+                                         <img class="pic-1" src="{{ asset('assets/img/product/'.$p->img2) }}" alt="product">
+                                         <img class="pic-2" src="{{ asset('assets/img/product/'.$p->img3) }}" alt="product">
+                                     </a>
+                                     <ul class="product-links">
+                                         <li id="{{ $p->id }}" onclick="addToCard(this)"><a href="#" ><i class="fal fa-shopping-cart"></i></a></li>
+                                         <li><a href="{{ asset('assets/img/product/'.$p->img1) }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
+                                         {{-- <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li> --}}
+                                     </ul>
+                                 </div>
+                                 <div class="product-description">
+                                     <h4 class="product-name">
+                                         <a href="{{ asset('assets/img/product/'.$p->img1) }}" data-bs-toggle="modal" data-bs-target="#productModalId">{{ $p->nom }}</a>
+                                     </h4>
+                                     <div class="product-price">
+                                         {{-- <span class="price-old">139.00$</span> --}}
+                                         <span class="price-now">{{ $p->prix.''.$p->monaie }}</span>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                            @empty
 
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c2 c3 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <span class="product-badge product-badge-new">new</span>
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-06.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-11.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt femme blanc</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-now">120.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforelse
 
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c2 c3 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <span class="product-badge product-badge-new">nouveau</span>
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-10.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-09.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt tendance</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-now">12.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c2 c3 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <span class="product-badge product-badge-sale">vente</span>
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-07.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-09.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt vert foncé</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-now">100.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c2 c3 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <span class="product-badge product-badge-best">meilleure vente</span>
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-08.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-11.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirt blanc</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-old">120.00$</span>
-                                            <span class="price-now">100.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c1 c3 c2 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-04.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-02.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">Carte de visite</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-old">90.00$</span>
-                                            <span class="price-now">70.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c2 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <span class="product-badge product-badge-off">10% off</span>
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-07.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-10.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirts hommes</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-old">90.00$</span>
-                                            <span class="price-now">70.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-4 col-sm-6 c1 c2 c3 c4 grid-item">
-                                <div class="product-single">
-                                    <div class="product-thumb">
-                                        <span class="product-badge product-badge-off">10% off</span>
-                                        <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId" class="image">
-                                            <img class="pic-1" src="{{ asset('assets/img/product/product-12.png') }}" alt="product">
-                                            <img class="pic-2" src="{{ asset('assets/img/product/product-06.png') }}" alt="product">
-                                        </a>
-                                        <ul class="product-links">
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart"></i></a></li>
-                                            <li><a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></a></li>
-                                            <li><a href="{{ route('cart') }}"><i class="fal fa-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-description">
-                                        <h4 class="product-name">
-                                            <a href="{{ asset('assets/img/product/product-shop-1.jpg') }}" data-bs-toggle="modal" data-bs-target="#productModalId">T-shirts noirs</a>
-                                        </h4>
-                                        <div class="product-price">
-                                            <span class="price-old">100.00$</span>
-                                            <span class="price-now">90.00$</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

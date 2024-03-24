@@ -34,8 +34,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $prod=produit::get();
-        return view('welcome',compact('prod'));
+
+        return view('welcome');
     }
 
     /**
@@ -97,6 +97,6 @@ class HomeController extends Controller
      */
     public function addToCart(Request $request)
     {
-        // 
+        //
     }
 }

@@ -127,8 +127,19 @@
                                         <li class="menu-item-has-children justify-content-end">
                                             <a href=""><i class="fas fa-user-alt"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="shop.html">Profil</a></li>
-                                                <li><a href="shop-sidebar.html">Mes achats</a></li>
+                                                <li><a href="">Profil</a></li>
+                                                <li><a href="">Mes achats</a></li>
+                                                <hr>
+
+                                                @if(Auth::user()->role=="admin" )
+                                                {{-- <h6>Partie admin</h6> --}}
+                                                <li><a href="">Gestion des produits</a></li>
+                                                <li><a href="">Le commandes</a></li>
+                                                <li><a href="">Messages</a></li>
+                                                <li><a href="">Newsletter</a></li>
+                                                <li><a href="">Clients</a></li>
+                                                <hr>
+                                                @endif
                                                 <li>
                                                     <a href=""  onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">Déconnexion

@@ -24,10 +24,11 @@ class ViewServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
-            $categorie = produit::select('categorie')->distinct()->get();;
+            $categorie = produit::select('categorie')->distinct()->get();
+            $prod=produit::get();
+            $view->with('prod', $prod);
             $view->with('categorie', $categorie);
             if (!Auth::guest()) {
-
                 $panier = panier::with("produit", "user")->where("user_id", Auth::user()->id)->get();
                 // dd($panier->pluck("prix"));
                 $view->with('panier', $panier);
