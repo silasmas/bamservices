@@ -2,7 +2,7 @@
 # Bonjour {{ $user->name }}
 
 @component('mail::panel')
-Vous avez une nouvel commance provenant du site.
+Vous avez une nouvelle commande provenant du site.
 Merci de vous connectez comme administrateur pour le voir.
 @endcomponent
 @component('mail::table')

@@ -32,6 +32,6 @@ class notification extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.notify')->subject("Nouveau commande sur le site");
+        return $this->markdown('emails.notify')->subject("Nouvelle commande sur le site");
     }
 }
